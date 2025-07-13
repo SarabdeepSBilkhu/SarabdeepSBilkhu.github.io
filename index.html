@@ -3,93 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <title>Sarabdeep Singh Bilkhu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+      background: #0a0f1a;
+      color: #e0e0e0;
+      font-family: 'Roboto Mono', monospace;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 70px;
+      background: #0c1524;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow-x: hidden;
+      padding: 20px 0;
     }
-
-    h1 {
-      font-size: 3.8rem;
-      margin-bottom: 5px;
-      animation: fadeIn 1.5s ease;
-    }
-
-    h2 {
-      font-size: 1.7rem;
-      font-weight: normal;
-      margin-bottom: 25px;
-      animation: fadeIn 2s ease;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-      animation: fadeIn 2.5s ease;
-    }
-
-    .button {
-      padding: 12px 25px;
-      background: #1db954;
-      color: #fff;
+    .sidebar a {
+      margin: 20px 0;
+      color: #5bc0eb;
+      font-size: 22px;
       text-decoration: none;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      color: #3fa7d6;
+    }
+    .main {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .time {
+      font-size: 16px;
+    }
+    .terminal-input {
+      width: 100%;
+      padding: 12px;
+      background: #0c1524;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .card {
+      flex: 1 1 200px;
+      background: #101a2e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background: #192a4d;
+    }
+    .about {
+      margin-top: 40px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .skill-tag {
+      background: #24395e;
+      padding: 5px 10px;
       border-radius: 5px;
-      font-weight: bold;
-      transition: 0.3s ease;
-      display: inline-block;
-      margin: 8px;
-    }
-
-    .button:hover {
-      background: #17a44d;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.85rem;
-      color: #bbb;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px);}
-      to { opacity: 1; transform: translateY(0);}
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+  <div class="sidebar">
+    <a href="#">🐙</a>
+    <a href="#">📸</a>
+    <a href="#">✉️</a>
+    <a href="#">💼</a>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <h1>Sarabdeep Singh Bilkhu</h1>
+        <p>Crafting code-driven solutions in data & hardware.</p>
+      </div>
+      <div class="time" id="clock"></div>
+    </div>
 
-  <h1>Hey, I'm Sarabdeep Singh Bilkhu 👋</h1>
-  <h2>Turning code into real-world solutions</h2>
+    <input type="text" class="terminal-input" placeholder="$ Type a command or search...">
 
-  <p>
-    I’m a technology enthusiast who loves working with Python, MySQL, and R. 
-    My projects include a <strong>Web-Based Banking System</strong> and a <strong>Gesture-Controlled Robot Car</strong> built with Arduino and custom hardware. 
-    I focus on creating practical, clean, and efficient solutions that bridge software with real-world applications.
-  </p>
+    <div class="cards">
+      <div class="card">📄 Documents</div>
+      <div class="card">📦 Projects</div>
+      <div class="card">👤 About</div>
+      <div class="card">📬 Contact</div>
+    </div>
 
-  <a href="https://github.com/SarabdeepSBilkhu" class="button">🔗 GitHub</a>
-  <a href="https://linkedin.com/in/Sarabdeep-Singh-Bilkhu" class="button">🔗 LinkedIn</a>
-  <a href="https://instagram.com/s.bilkhu" class="button">📸 Instagram</a>
-  <a href="mailto:sanjhbilkhu2006@gmail.com" class="button">📧 Contact Me</a>
+    <div class="about">
+      <h2>About Me</h2>
+      <p>Tech enthusiast into Python, MySQL, R — with projects like a Web Banking System and Gesture-Controlled Robot Car. Always chasing clean, efficient solutions bridging code with physical world applications.</p>
+      <h3>Skills & Technologies</h3>
+      <div class="skills">
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">MySQL</div>
+        <div class="skill-tag">R</div>
+        <div class="skill-tag">Arduino</div>
+        <div class="skill-tag">Data Analysis</div>
+        <div class="skill-tag">EDA</div>
+      </div>
+    </div>
+  </div>
 
-  <p style="margin-top:30px; font-style: italic; color: #ccc;">
-    Fun Fact: I’m weirdly obsessed with writing clean, well-commented Python code — even for throwaway scripts.
-  </p>
-
-  <footer>&copy; 2025 Sarabdeep Singh Bilkhu</footer>
-
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('clock').innerHTML = now.toLocaleTimeString() + '<br>' + now.toLocaleDateString(undefined, options);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
 </html>
