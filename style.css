@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0f1a, #102133);
+  color: #e0e0e0;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 70px;
+  background: #0c1524;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.sidebar a {
+  margin: 20px 0;
+  color: #5bc0eb;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #3fa7d6;
+}
+
+.main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time {
+  font-size: 16px;
+  color: #88c0d0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #5bc0eb;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #88c0d0;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #4fd1c5;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.terminal-input {
+  width: 100%;
+  padding: 12px;
+  background: #0c1524;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  flex: 1 1 200px;
+  background: #101a2e;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #192a4d;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.skill-tag {
+  background: #24395e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
