@@ -26,13 +26,13 @@
     <input type="text" class="terminal-input" placeholder="$ Type a command or search...">
 
     <div class="cards">
-      <div class="card">📄 Documents</div>
-      <div class="card">📦 Projects</div>
-      <div class="card">👤 About</div>
-      <div class="card">📬 Contact</div>
+      <div class="card" onclick="document.getElementById('documents').scrollIntoView({ behavior: 'smooth' })">📄 Documents</div>
+      <div class="card" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">📦 Projects</div>
+      <div class="card" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">👤 About</div>
+      <div class="card" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">📬 Contact</div>
     </div>
 
-    <div class="about">
+    <div class="about" id="about">
       <h2>About Me</h2>
       <p>Tech enthusiast into Python, MySQL, R — with projects like a Web Banking System and Gesture-Controlled Robot Car. Always chasing clean, efficient solutions bridging code with physical world applications.</p>
       <h3>Skills & Technologies</h3>
@@ -44,6 +44,27 @@
         <div class="skill-tag">Data Analysis</div>
         <div class="skill-tag">EDA</div>
       </div>
+    </div>
+
+    <div class="section" id="documents">
+      <h2>Documents</h2>
+      <p>Coming soon — a collection of project docs, reports, and presentations.</p>
+    </div>
+
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>💻 Web-based Banking System</li>
+        <li>🤖 Gesture Controlled Robot Car (Arduino, sensors, motors)</li>
+        <li>📊 Data analysis projects with Python + MySQL</li>
+      </ul>
+    </div>
+
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:sanjhbilkhu2006@gmail.com">sanjhbilkhu2006@gmail.com</a></p>
+      <p>Instagram: <a href="#">@s.bilkhu</a></p>
+      <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
     </div>
   </div>
 
