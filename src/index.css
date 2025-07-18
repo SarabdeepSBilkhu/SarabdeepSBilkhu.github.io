@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply bg-black text-white relative font-sans h-screen;
+    cursor: none
+  }
+}
+
+@layer components{
+  .introducing-container{
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: -1;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #9657de, #383abe, #389ec3, #0095ff, #9657de);
+  }
+  .contact-button{
+    box-shadow: inset 0px 0px 6px rgba(255, 255, 255, 0.25);
+    transition-duration: 0.3s;
+  }
+  .contact-button:hover{
+    box-shadow: inset 0px 0px 100px rgb(154, 204, 255);
+  }
+}
+
+@layer utilities{
+  .bg-gradient-radial{
+    background-image: radial-gradient(circle at 50% 70%, var
+    (--tw-gradient-stops));
+  }
+}
+
+@layer components {
+  .spline-overlay {
+    @apply absolute bottom-0 right-0 w-[170px] h-[60px] 
+    bg-black rounded-md z-20 pointer-events-none;
+  }
+}
