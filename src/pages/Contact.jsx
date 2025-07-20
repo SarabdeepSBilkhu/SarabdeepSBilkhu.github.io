@@ -37,19 +37,19 @@ const Contact = () => {
     {
       icon: FiMail,
       title: "Email",
-      value: "sarabdeep.bilkhu@gmail.com",
-      link: "mailto:sarabdeep.bilkhu@gmail.com"
+      value: "sanjhbilkhu2006@gmail.com",
+      link: "mailto:sanjhbilkhu2006@gmail.com"
     },
     {
       icon: FiPhone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+91 70424-32513",
+      link: "tel:+917042432513"
     },
     {
       icon: FiMapPin,
       title: "Location",
-      value: "Toronto, Canada",
+      value: "Jalandhar, Punjab",
       link: "#"
     }
   ];
