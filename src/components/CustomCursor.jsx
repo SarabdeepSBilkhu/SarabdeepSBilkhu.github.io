@@ -1,87 +1,92 @@
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const CustomCursor = () => {
-  
-    const cursorRef = useRef(null);
-    const cursorBorderRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
-    const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
 
-    if(isMobile) return
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+    };
 
-    useEffect(() => {
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+    };
 
-        const cursor = cursorRef.current;
-        const cursorBorder = cursorBorderRef.current;
+    // Add event listeners for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
+    
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', handleMouseEnter);
+      element.addEventListener('mouseleave', handleMouseLeave);
+    });
 
-        gsap.set([cursor, cursorBorder], {
-            xPercent: -50, 
-            yPercent: -50,
-        })
+    document.addEventListener('mousemove', handleMouseMove);
 
-        const xTo = gsap.quickTo(cursor, "x", {
-            duration: 0.2,
-            ease: "power3.out"
-        })
-        const yTo = gsap.quickTo(cursor, "y", {
-            duration: 0.2,
-            ease: "power3.out"
-        })
-
-        const xToBorder = gsap.quickTo(cursorBorder, "x", {
-            duration: 0.5,
-            ease: "power.out"
-        })
-        const yToBorder = gsap.quickTo(cursorBorder, "y", {
-            duration: 0.5,
-            ease: "power3.out"
-        })
-
-        const handleMouseMove = (e) => {
-            xTo(e.clientX)
-            yTo(e.clientY)
-            xToBorder(e.clientX)
-            yToBorder(e.clientY)
-        }
-
-        window.addEventListener("mousemove", handleMouseMove);
-
-        document.addEventListener("mousedown", () => {
-            gsap.to([cursor, cursorBorder], {
-                scale: 0.6,
-                duration: 0.2,
-            })
-        })
-
-        document.addEventListener("mouseup", () => {
-            gsap.to([cursor, cursorBorder], {
-                scale: 1,
-                duration: 0.2,
-            })
-        })
-
-    }, [])
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      interactiveElements.forEach(element => {
+        element.removeEventListener('mouseenter', handleMouseEnter);
+        element.removeEventListener('mouseleave', handleMouseLeave);
+      });
+    };
+  }, []);
 
   return (
     <>
-
-        {}
-
-        <div ref={cursorRef}
-        className="fixed top-0 left-0 w-[20px] h-[20px] bg-white 
-        rounded-full pointer-events-none z-[999] transform mix-blend-difference"
-        />
-        
-        <div 
-        className="fixed top-0 left-0 w-[40px] h-[40px] border 
-        border-white rounded-full pointer-events-none z-[999] 
-        mix-blend-difference transform opacity-50"
-        ref={cursorBorderRef}
-        />
-
+      {/* Main cursor */}
+      <motion.div
+        className="fixed top-0 left-0 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full pointer-events-none z-50 mix-blend-difference"
+        animate={{
+          x: mousePosition.x - 8,
+          y: mousePosition.y - 8,
+          scale: isHovering ? 1.5 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 500,
+          damping: 28,
+          mass: 0.5,
+        }}
+      />
+      
+      {/* Cursor trail */}
+      <motion.div
+        className="fixed top-0 left-0 w-8 h-8 border border-white/30 rounded-full pointer-events-none z-40"
+        animate={{
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
+          scale: isHovering ? 2 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 250,
+          damping: 20,
+          mass: 0.5,
+        }}
+      />
+      
+      {/* Cursor dot */}
+      <motion.div
+        className="fixed top-0 left-0 w-1 h-1 bg-white rounded-full pointer-events-none z-50"
+        animate={{
+          x: mousePosition.x - 0.5,
+          y: mousePosition.y - 0.5,
+          scale: isHovering ? 0 : 1,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 1000,
+          damping: 50,
+        }}
+      />
     </>
-  )
-}
+  );
+};
 
-export default CustomCursor
+export default CustomCursor;
