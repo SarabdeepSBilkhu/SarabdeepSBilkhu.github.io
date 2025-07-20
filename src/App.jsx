@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
@@ -13,8 +13,11 @@ import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 
+export const CursorContext = createContext({ cursorVisible: true, setCursorVisible: () => {} });
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [cursorVisible, setCursorVisible] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -36,23 +39,25 @@ const App = () => {
       </AnimatePresence>
 
       {!isLoading && (
-        <motion.div 
-          className='container mx-auto px-4 md:px-12 min-h-screen flex flex-col'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <Header />
+        <CursorContext.Provider value={{ cursorVisible, setCursorVisible }}>
           <CustomCursor />
+          <motion.div
+            className="container mx-auto px-4 md:px-12 min-h-screen flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Header />
 
-          <Routes>
-            <Route path="/" element={<Hero />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </motion.div>
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </motion.div>
+        </CursorContext.Provider>
       )}
     </>
   );
