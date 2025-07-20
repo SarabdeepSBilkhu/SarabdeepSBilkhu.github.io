@@ -1,12 +1,18 @@
 import "boxicons/css/boxicons.min.css";
 import Spline from "@splinetool/react-spline";
 import { FiUser, FiMail, FiMessageSquare, FiX, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { CursorContext } from "../App";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
 
     const [contactFormOpen, setContactFormOpen] = useState(false);
+    const { setCursorVisible } = useContext(CursorContext);
+
+    useEffect(() => {
+      setCursorVisible(true); // Always show the custom cursor
+    }, [contactFormOpen, setCursorVisible]);
 
     const openContactForm = () => {
         setContactFormOpen(true);
@@ -98,8 +104,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.button
-              onClick={openContactForm}
+            <motion.a
+              href="mailto:sanjhbilkhu2006@gmail.com"
               className="w-full sm:w-[208px] h-[44px] inline-flex items-center 
               justify-center border-white rounded-full 
               text-sm tracking-wider contact-button glass-effect"
@@ -108,7 +114,7 @@ const Hero = () => {
             >
                 <FiMail className="mr-2" />
                Contact Me
-            </motion.button>
+            </motion.a>
 
             <motion.a
               href="/resume.pdf"
@@ -127,11 +133,7 @@ const Hero = () => {
         <AnimatePresence>
           {contactFormOpen && (
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-custom flex items-center justify-center z-50 p-4"
+              className={`fixed inset-0 bg-black/50 backdrop-blur-custom flex items-center justify-center z-50 p-4 force-cursor`}
               onClick={closeContactForm}
             >
               <motion.div 
