@@ -37,19 +37,19 @@ const Contact = () => {
     {
       icon: FiMail,
       title: "Email",
-      value: "sarabdeep.bilkhu@gmail.com",
-      link: "mailto:sarabdeep.bilkhu@gmail.com"
+      value: "sanjhbilkhu2006@gmail.com",
+      link: "mailto:sanjhbilkhu2006@gmail.com"
     },
     {
       icon: FiPhone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+91 70424-32513",
+      link: "tel:+917042432513"
     },
     {
       icon: FiMapPin,
       title: "Location",
-      value: "Toronto, Canada",
+      value: "Jalandhar, Punjab",
       link: "#"
     }
   ];
@@ -175,28 +175,16 @@ const Contact = () => {
               </div>
 
               <motion.button
-                type="submit"
-                disabled={isSubmitting}
+                as="a"
+                href="mailto:sanjhbilkhu2006@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`self-center mt-4 px-8 py-3 rounded-full font-semibold 
                   transition-all duration-300 text-white shadow-md flex items-center gap-2
-                  ${isSubmitting 
-                    ? 'bg-gray-600 cursor-not-allowed' 
-                    : 'bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 pulse-glow'
-                  }`}
+                  bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 pulse-glow`}
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <FiSend className="w-4 h-4" />
-                    Send Message
-                  </>
-                )}
+                <FiSend className="w-4 h-4" />
+                Send Message
               </motion.button>
 
               {submitStatus === "success" && (
