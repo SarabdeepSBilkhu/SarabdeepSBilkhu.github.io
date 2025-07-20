@@ -128,15 +128,15 @@ const About = () => {
           </motion.div>
         </div>
         
-        {/* Technical Skills and Interests - stacked below */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 lg:mr-[580px]">
+        {/* Technical Skills and Interests - each covers full width, stacked vertically */}
+        <div className="mt-12 flex flex-col gap-10">
           {/* Skills Section */}
           <motion.div 
-            className=""
+            className="w-full bg-black/40 rounded-xl p-8 shadow-lg"
             variants={itemVariants}
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">Technical Skills</h3>
-            <div className="space-y-3">
+            <h3 className="text-2xl font-bold mb-6 text-white text-center">Technical Skills</h3>
+            <div className="space-y-3 max-w-3xl mx-auto">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -145,9 +145,9 @@ const About = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <span className="text-sm font-medium">{skill.name}</span>
+                  <span className="text-lg font-medium">{skill.name}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="w-40 h-3 bg-white/10 rounded-full overflow-hidden">
                       <motion.div
                         className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
                         initial={{ width: 0 }}
@@ -155,7 +155,7 @@ const About = () => {
                         transition={{ duration: 1, delay: index * 0.1 }}
                       />
                     </div>
-                    <span className="text-xs text-gray-400 w-8">{skill.level}%</span>
+                    <span className="text-base text-gray-400 w-10">{skill.level}%</span>
                   </div>
                 </motion.div>
               ))}
@@ -163,25 +163,25 @@ const About = () => {
           </motion.div>
           {/* Interests Section */}
           <motion.div 
-            className=""
+            className="w-full bg-black/40 rounded-xl p-8 shadow-lg"
             variants={itemVariants}
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">Interests & Values</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <h3 className="text-2xl font-bold mb-6 text-white text-center">Interests & Values</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {interests.map((interest, index) => (
                 <motion.div
                   key={interest.title}
-                  className="p-3 rounded-lg glass-effect border border-white/10"
+                  className="p-5 rounded-lg glass-effect border border-white/10 flex flex-col items-center text-center"
                   whileHover={{ scale: 1.02 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <interest.icon className="text-blue-400 w-4 h-4" />
-                    <h4 className="font-semibold text-sm">{interest.title}</h4>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <interest.icon className="text-blue-400 w-6 h-6" />
+                    <h4 className="font-semibold text-lg">{interest.title}</h4>
                   </div>
-                  <p className="text-xs text-gray-300">{interest.description}</p>
+                  <p className="text-base text-gray-300">{interest.description}</p>
                 </motion.div>
               ))}
             </div>
