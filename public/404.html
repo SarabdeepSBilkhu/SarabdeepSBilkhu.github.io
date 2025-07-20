@@ -11,6 +11,17 @@
     a { color: #4fa3ff; text-decoration: none; margin-top: 2rem; font-size: 1.2rem; }
     a:hover { text-decoration: underline; }
   </style>
+  <script>
+    // Redirect all 404s to index.html for client-side routing
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== location.href) {
+      history.replaceState(null, null, redirect);
+    } else {
+      // If not coming from a direct refresh, redirect to home
+      location.replace('/');
+    }
+  </script>
 </head>
 <body>
   <h1>404</h1>
