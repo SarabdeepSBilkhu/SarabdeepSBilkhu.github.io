@@ -18,7 +18,7 @@ const Projects = () => {
       description:
         "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
       technologies: ["Arduino", "RF Communication", "Embedded Systems"],
-      link: "https://github.com/SarabdeepSBilkhu/HoloCruze",
+      link: "https://SarabdeepSBilkhu.github.io/HoloCruze",
       github: "https://github.com/SarabdeepSBilkhu/HoloCruze",
       image: "/project2.jpg",
       featured: true
@@ -28,7 +28,7 @@ const Projects = () => {
       description:
         "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
       technologies: ["React", "Web Platform", "Productivity"],
-      link: "https://github.com/SarabdeepSBilkhu/CampusSync",
+      link: "https://SarabdeepSBilkhu.github.io/CampusSync",
       github: "https://github.com/SarabdeepSBilkhu/CampusSync",
       image: "/project3.jpg",
       featured: true
