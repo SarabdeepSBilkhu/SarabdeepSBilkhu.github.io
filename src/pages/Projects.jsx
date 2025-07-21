@@ -4,34 +4,44 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projectList = [
     {
+      title: "Personal Portfolio Website",
+      description:
+        "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
+      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
+      link: "https://sarabdeepsbilkhu.github.io",
+      github: "https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io",
+      image: "/project1.jpg",
+      featured: true
+    },
+    {
       title: "HoloCruze",
       description:
         "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
-      technologies: ["Arduino Nano", "RF Communication", "Embedded", "Robotics"],
+      technologies: ["Arduino", "RF Communication", "Embedded Systems"],
       link: "https://github.com/SarabdeepSBilkhu/HoloCruze",
       github: "https://github.com/SarabdeepSBilkhu/HoloCruze",
-      image: "/project1.jpg",
+      image: "/project2.jpg",
       featured: true
     },
     {
       title: "CampusSync",
       description:
         "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
-      technologies: ["React", "Web Platform", "Responsive Design"],
+      technologies: ["React", "Web Platform", "Productivity"],
       link: "https://github.com/SarabdeepSBilkhu/CampusSync",
       github: "https://github.com/SarabdeepSBilkhu/CampusSync",
-      image: "/project2.jpg",
+      image: "/project3.jpg",
       featured: true
     },
     {
-      title: "Personal Website",
+      title: "Chat-Based Banking System",
       description:
-        "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
-      technologies: ["React", "GitHub Pages", "Portfolio"],
-      link: "https://sarabdeepsbilkhu.github.io",
-      github: "https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io",
-      image: "/project3.jpg",
-      featured: true
+        "A web-based chat-driven banking system with a Python Flask backend integrated with MySQL for secure data management. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript, while I focused on backend logic, database integration, and API endpoints.",
+      technologies: ["Python", "Flask", "MySQL", "REST API"],
+      link: "#",
+      github: "#",
+      image: "/project4.jpg",
+      featured: false
     }
   ];
 
@@ -57,7 +67,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-8 md:py-16 px-4 md:px-6 pb-20 relative min-h-screen">
+    <section className="py-8 md:py-16 px-4 md:px-6 relative min-h-screen">
       {/* Section Heading */}
       <motion.div 
         className="relative inline-block p-4 mb-8 md:mb-12"
