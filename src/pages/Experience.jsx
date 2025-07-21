@@ -36,39 +36,52 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: "Personal Portfolio Website",
+      company: "Personal Project",
+      duration: "2023 - Present",
+      description: "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
+      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
+      achievements: [
+        "Designed and developed a fully responsive portfolio website",
+        "Integrated modern UI/UX with Tailwind CSS and Framer Motion",
+        "Deployed and maintained using GitHub Pages"
+      ]
+    },
+    {
       title: "HoloCruze",
       company: "Personal Project",
-      duration: "2024 - Present",
+      duration: "2022 - 2023",
       description: "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
-      technologies: ["Arduino Nano", "RF Communication", "Embedded", "Robotics"],
+      technologies: ["Arduino", "RF Communication", "Embedded Systems"],
       achievements: [
-        "Designed and built custom gesture controller",
+        "Built a custom gesture controller using Arduino Nano",
         "Implemented reliable RF communication for real-time control",
-        "Demonstrated smooth, wireless navigation without Bluetooth/Wi-Fi"
+        "Designed and assembled the robotic car hardware"
       ]
     },
     {
       title: "CampusSync",
       company: "Personal Project",
-      duration: "2024 - Present",
+      duration: "2023",
       description: "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
-      technologies: ["React", "Web Platform", "Responsive Design"],
+      technologies: ["React", "Web Platform", "Productivity"],
       achievements: [
-        "Developed a unified dashboard for student essentials",
-        "Integrated real-time placement alerts and roommate coordination",
-        "Achieved a fully responsive, mobile-friendly UI"
+        "Developed a unified dashboard for student productivity",
+        "Integrated scheduling, notes, and alerts in one platform",
+        "Designed for mobile and desktop responsiveness"
       ]
     },
     {
-      title: "Personal Website",
-      company: "Personal Project",
-      duration: "2024 - Present",
-      description: "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
-      technologies: ["React", "GitHub Pages", "Portfolio"],
+      title: "SKARK Banking System",
+      company: "Team Project",
+      duration: "2024",
+      description: "Developed the backend for a chat-driven banking web application using Python Flask and MySQL. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript. Implemented secure authentication, account management, and transaction features via RESTful APIs.",
+      technologies: ["Python", "Flask", "MySQL", "REST API"],
       achievements: [
-        "Built and deployed a modern, interactive portfolio",
-        "Showcased live projects and skills",
-        "Implemented smooth navigation and responsive design"
+        "Designed and implemented the database schema in MySQL",
+        "Built RESTful endpoints for banking operations",
+        "Integrated secure user authentication and session management",
+        "Collaborated with Ranbir Khurana (DevRanbir) for seamless backend/frontend integration"
       ]
     }
   ];
@@ -95,7 +108,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="py-16 px-6 pb-20 relative min-h-screen">
+    <section className="py-16 px-6 relative min-h-screen">
       {/* Section Heading with Inline Tech Icons */}
       <motion.div 
         className="relative inline-block w-full mb-12"
