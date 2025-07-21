@@ -34,7 +34,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Chat-Based Banking System",
+      title: "SKARK Banking System",
       description:
         "A web-based chat-driven banking system with a Python Flask backend integrated with MySQL for secure data management. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript, while I focused on backend logic, database integration, and API endpoints.",
       technologies: ["Python", "Flask", "MySQL", "REST API"],
