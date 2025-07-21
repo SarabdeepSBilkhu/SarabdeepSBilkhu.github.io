@@ -21,16 +21,26 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus(null), 3000);
-    }, 2000);
+    try {
+      const response = await fetch('https://formspree.io/f/manbqgje', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    }
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitStatus(null), 3000);
   };
 
   const contactInfo = [
@@ -175,16 +185,16 @@ const Contact = () => {
               </div>
 
               <motion.button
-                as="a"
-                href="mailto:sanjhbilkhu2006@gmail.com"
+                type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`self-center mt-4 px-8 py-3 rounded-full font-semibold 
                   transition-all duration-300 text-white shadow-md flex items-center gap-2
-                  bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 pulse-glow`}
+                  bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 pulse-glow ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
+                disabled={isSubmitting}
               >
                 <FiSend className="w-4 h-4" />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>
 
               {submitStatus === "success" && (
@@ -194,6 +204,15 @@ const Contact = () => {
                   className="text-center p-3 rounded-lg bg-green-500/20 border border-green-500/30"
                 >
                   <p className="text-green-400 text-sm">Message sent successfully!</p>
+                </motion.div>
+              )}
+              {submitStatus === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center p-3 rounded-lg bg-red-500/20 border border-red-500/30"
+                >
+                  <p className="text-red-400 text-sm">Failed to send message. Please try again later.</p>
                 </motion.div>
               )}
             </form>
