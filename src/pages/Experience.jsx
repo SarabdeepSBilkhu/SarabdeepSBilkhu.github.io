@@ -48,30 +48,6 @@ const Experience = () => {
       ]
     },
     {
-      title: "HoloCruze",
-      company: "Personal Project",
-      duration: "2022 - 2023",
-      description: "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
-      technologies: ["Arduino", "RF Communication", "Embedded Systems"],
-      achievements: [
-        "Built a custom gesture controller using Arduino Nano",
-        "Implemented reliable RF communication for real-time control",
-        "Designed and assembled the robotic car hardware"
-      ]
-    },
-    {
-      title: "CampusSync",
-      company: "Personal Project",
-      duration: "2023",
-      description: "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
-      technologies: ["React", "Web Platform", "Productivity"],
-      achievements: [
-        "Developed a unified dashboard for student productivity",
-        "Integrated scheduling, notes, and alerts in one platform",
-        "Designed for mobile and desktop responsiveness"
-      ]
-    },
-    {
       title: "SKARK Banking System",
       company: "Team Project",
       duration: "2024",
