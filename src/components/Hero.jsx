@@ -1,12 +1,23 @@
 import "boxicons/css/boxicons.min.css";
 import Spline from "@splinetool/react-spline";
 import { FiUser, FiMail, FiMessageSquare, FiX, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { CursorContext } from "../App";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
 
     const [contactFormOpen, setContactFormOpen] = useState(false);
+    const { setCursorVisible } = useContext(CursorContext);
+
+    // Add state for form data and submission
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    useEffect(() => {
+      setCursorVisible(true); // Always show the custom cursor
+    }, [contactFormOpen, setCursorVisible]);
 
     const openContactForm = () => {
         setContactFormOpen(true);
@@ -14,13 +25,41 @@ const Hero = () => {
 
     const closeContactForm = () => {
         setContactFormOpen(false);
+        setFormData({ name: "", email: "", message: "" });
+        setSubmitStatus(null);
     }
 
-    const handleSubmit = (e) => {
+    const handleInputChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add form submission logic here
-        closeContactForm();
-    }
+      setIsSubmitting(true);
+      try {
+        const response = await fetch('https://formspree.io/f/manbqgje', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        if (response.ok) {
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          setSubmitStatus("error");
+        }
+      } catch (error) {
+        setSubmitStatus("error");
+      }
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(null), 3000);
+    };
 
   return (
     <main className="flex flex-1 flex-col justify-between h-full">
@@ -98,8 +137,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.button
-              onClick={openContactForm}
+            <motion.a
+              href="#"
+              onClick={(e) => { e.preventDefault(); openContactForm(); }}
               className="w-full sm:w-[208px] h-[44px] inline-flex items-center 
               justify-center border-white rounded-full 
               text-sm tracking-wider contact-button glass-effect"
@@ -108,7 +148,7 @@ const Hero = () => {
             >
                 <FiMail className="mr-2" />
                Contact Me
-            </motion.button>
+            </motion.a>
 
             <motion.a
               href="/resume.pdf"
@@ -127,11 +167,7 @@ const Hero = () => {
         <AnimatePresence>
           {contactFormOpen && (
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-custom flex items-center justify-center z-50 p-4"
+              className={`fixed inset-0 bg-black/50 backdrop-blur-custom flex items-center justify-center z-50 p-4 force-cursor`}
               onClick={closeContactForm}
             >
               <motion.div 
@@ -169,6 +205,8 @@ const Hero = () => {
                       name="name"
                       placeholder="Your Name"
                       required
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="flex-1 bg-transparent border-b border-white/20 outline-none py-2 placeholder-white/70 focus:border-blue-400 transition-colors duration-300"
                     />
                   </div>
@@ -179,6 +217,8 @@ const Hero = () => {
                       name="email"
                       placeholder="Your Email"
                       required
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="flex-1 bg-transparent border-b border-white/20 outline-none py-2 placeholder-white/70 focus:border-blue-400 transition-colors duration-300"
                     />
                   </div>
@@ -189,6 +229,8 @@ const Hero = () => {
                       rows="4"
                       placeholder="Your Message"
                       required
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="flex-1 bg-transparent border-b border-white/20 outline-none py-2 placeholder-white/70 resize-none focus:border-blue-400 transition-colors duration-300"
                     />
                   </div>
@@ -197,12 +239,32 @@ const Hero = () => {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="self-center mt-4 px-8 py-3 rounded-full font-semibold 
+                    className={`self-center mt-4 px-8 py-3 rounded-full font-semibold 
                       bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 
-                      hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 text-white shadow-md pulse-glow"
+                      hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 text-white shadow-md pulse-glow ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </motion.button>
+
+                  {submitStatus === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center p-3 rounded-lg bg-green-500/20 border border-green-500/30 mt-2"
+                    >
+                      <p className="text-green-400 text-sm">Message sent successfully!</p>
+                    </motion.div>
+                  )}
+                  {submitStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center p-3 rounded-lg bg-red-500/20 border border-red-500/30 mt-2"
+                    >
+                      <p className="text-red-400 text-sm">Failed to send message. Please try again later.</p>
+                    </motion.div>
+                  )}
                 </form>
               </motion.div>
             </motion.div>

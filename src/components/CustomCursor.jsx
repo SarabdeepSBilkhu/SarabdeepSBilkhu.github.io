@@ -1,51 +1,46 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-
-    const handleMouseEnter = () => {
-      setIsHovering(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
-    };
-
-    // Add event listeners for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
-    
-    interactiveElements.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter);
-      element.addEventListener('mouseleave', handleMouseLeave);
-    });
-
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
     document.addEventListener('mousemove', handleMouseMove);
-
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      interactiveElements.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter);
-        element.removeEventListener('mouseleave', handleMouseLeave);
-      });
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
   }, []);
+
+  // Smaller base sizes
+  const mainSize = 12; // px
+  const trailSize = 24; // px
+  const dotSize = 2; // px
+  // Shrink scale on click
+  const mainScale = isClicking ? 0.7 : 1;
+  const trailScale = isClicking ? 1.2 : 1.6;
+  const dotScale = isClicking ? 0.5 : 1;
 
   return (
     <>
       {/* Main cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full pointer-events-none z-[99999] mix-blend-difference"
+        style={{ width: mainSize, height: mainSize }}
         animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isHovering ? 1.5 : 1,
+          x: mousePosition.x - mainSize / 2,
+          y: mousePosition.y - mainSize / 2,
+          scale: 1.2 * mainScale,
         }}
         transition={{
           type: "spring",
@@ -54,14 +49,14 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       />
-      
       {/* Cursor trail */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-white/30 rounded-full pointer-events-none z-40"
+        className="fixed top-0 left-0 border border-white/30 rounded-full pointer-events-none z-[99999]"
+        style={{ width: trailSize, height: trailSize }}
         animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isHovering ? 2 : 1,
+          x: mousePosition.x - trailSize / 2,
+          y: mousePosition.y - trailSize / 2,
+          scale: trailScale,
         }}
         transition={{
           type: "spring",
@@ -70,14 +65,14 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       />
-      
       {/* Cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 w-1 h-1 bg-white rounded-full pointer-events-none z-50"
+        className="fixed top-0 left-0 bg-white rounded-full pointer-events-none z-[99999]"
+        style={{ width: dotSize, height: dotSize }}
         animate={{
-          x: mousePosition.x - 0.5,
-          y: mousePosition.y - 0.5,
-          scale: isHovering ? 0 : 1,
+          x: mousePosition.x - dotSize / 2,
+          y: mousePosition.y - dotSize / 2,
+          scale: dotScale,
         }}
         transition={{
           type: "spring",

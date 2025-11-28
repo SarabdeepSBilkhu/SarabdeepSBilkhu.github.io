@@ -36,39 +36,28 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "AI Privacy Auditor MVP",
-      company: "Personal Project",
-      duration: "Jan 2025 - Mar 2025",
-      description: "Designed and built a privacy-focused tool to detect sensitive data leaks in social media posts. Integrated NLP techniques and built a dashboard using modern frontend frameworks.",
-      technologies: ["Python", "NLP", "React", "Tailwind CSS", "AI/ML"],
-      achievements: [
-        "Implemented advanced NLP algorithms for text analysis",
-        "Built responsive dashboard with real-time data processing",
-        "Achieved 95% accuracy in privacy risk detection"
-      ]
-    },
-    {
       title: "Personal Portfolio Website",
       company: "Personal Project",
-      duration: "Jun 2025 - Ongoing",
-      description: "Created an interactive portfolio with Spline 3D assets, smooth scroll effects, and fully responsive UI. Showcases live projects, resume, and contact integrations.",
-      technologies: ["React", "Spline", "Framer Motion", "Tailwind CSS", "Vite"],
+      duration: "2023 - Present",
+      description: "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
+      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
       achievements: [
-        "Integrated 3D interactive elements using Spline",
-        "Implemented smooth animations and transitions",
-        "Achieved 100% responsive design across all devices"
+        "Designed and developed a fully responsive portfolio website",
+        "Integrated modern UI/UX with Tailwind CSS and Framer Motion",
+        "Deployed and maintained using GitHub Pages"
       ]
     },
     {
-      title: "AI Resume Generator",
-      company: "Personal Project",
-      duration: "Dec 2024 - Jan 2025",
-      description: "Developed an AI-powered resume builder with intelligent formatting and ATS optimization. Features include multiple templates and export options.",
-      technologies: ["React", "AI/ML", "PDF Generation", "Tailwind", "JavaScript"],
+      title: "SKARK Banking System",
+      company: "Team Project",
+      duration: "2024",
+      description: "Developed the backend for a chat-driven banking web application using Python Flask and MySQL. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript. Implemented secure authentication, account management, and transaction features via RESTful APIs.",
+      technologies: ["Python", "Flask", "MySQL", "REST API"],
       achievements: [
-        "Integrated AI for intelligent content suggestions",
-        "Built PDF export functionality with custom styling",
-        "Created 10+ professional resume templates"
+        "Designed and implemented the database schema in MySQL",
+        "Built RESTful endpoints for banking operations",
+        "Integrated secure user authentication and session management",
+        "Collaborated with Ranbir Khurana (DevRanbir) for seamless backend/frontend integration"
       ]
     }
   ];

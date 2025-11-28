@@ -4,63 +4,23 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projectList = [
     {
-      title: "Privacy Risk Auditor",
+      title: "Personal Portfolio Website",
       description:
-        "AI-powered tool that analyzes your social media posts to identify and flag personal data leaks. Built with Python, NLP, and modern web technologies.",
-      technologies: ["Python", "NLP", "React", "Tailwind CSS"],
-      link: "https://github.com/sarabdeepsbilkhu/privacy-risk-auditor",
-      github: "https://github.com/sarabdeepsbilkhu/privacy-risk-auditor",
+        "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
+      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
+      link: "https://sarabdeepsbilkhu.github.io",
+      github: "https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io",
       image: "/project1.jpg",
       featured: true
     },
     {
-      title: "AI Resume Generator",
+      title: "SKARK Banking System",
       description:
-        "Tool that builds ATS-friendly resumes using AI prompts and templates, exportable in PDF/HTML. Features intelligent formatting and optimization.",
-      technologies: ["React", "AI/ML", "PDF Generation", "Tailwind"],
-      link: "https://github.com/sarabdeepsbilkhu/ai-resume-builder",
-      github: "https://github.com/sarabdeepsbilkhu/ai-resume-builder",
-      image: "/project2.jpg",
-      featured: true
-    },
-    {
-      title: "3D Portfolio Website",
-      description:
-        "Personal portfolio with Spline 3D models, scroll-triggered effects, and responsive design. Showcases modern web development techniques.",
-      technologies: ["React", "Spline", "Framer Motion", "Tailwind CSS"],
-      link: "https://sarabdeepsbilkhu.github.io",
-      github: "https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io",
-      image: "/project3.jpg",
-      featured: true
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A modern task management application with drag-and-drop functionality, real-time updates, and collaborative features.",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+        "A web-based chat-driven banking system with a Python Flask backend integrated with MySQL for secure data management. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript, while I focused on backend logic, database integration, and API endpoints.",
+      technologies: ["Python", "Flask", "MySQL", "REST API"],
       link: "#",
       github: "#",
       image: "/project4.jpg",
-      featured: false
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Interactive weather dashboard with real-time data, beautiful visualizations, and location-based forecasting.",
-      technologies: ["JavaScript", "Chart.js", "Weather API", "CSS3"],
-      link: "#",
-      github: "#",
-      image: "/project5.jpg",
-      featured: false
-    },
-    {
-      title: "E-commerce Platform",
-      description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      technologies: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
-      link: "#",
-      github: "#",
-      image: "/project6.jpg",
       featured: false
     }
   ];

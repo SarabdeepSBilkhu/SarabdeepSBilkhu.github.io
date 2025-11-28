@@ -1,65 +1,193 @@
-# 🌐 Personal Portfolio – SarabdeepSBilkhu.github.io
+# Sarabdeep Singh Bilkhu - Developer Portfolio
 
-The source code for my personal portfolio website, built and deployed using **GitHub Pages**.
-
-A clean, modern, and responsive space to showcase my **projects**, **skills**, and **ideas**.
-
-## 🚀 Live Website
-
-🔗 [SarabdeepSBilkhu.github.io](https://sarabdeepsbilkhu.github.io)
+A modern, interactive portfolio website showcasing my skills, projects, and experience in web development.
 
 ## ✨ Features
 
-- ⚛️ Built with **React (JSX)**
-- 🎨 Styled using **TailwindCSS** and **shadcn/ui**
-- 🌈 Uses custom 3D assets from **Spline**
-- ⚡ Smooth animations and scroll effects
-- 🌙 Light/Dark mode support
-- 📱 Fully responsive design
+### 🎨 Enhanced Visual Design
+- **Glass Morphism Effects**: Beautiful translucent elements with backdrop blur
+- **Gradient Animations**: Dynamic color transitions and animated gradients
+- **Custom Cursor**: Interactive cursor with hover effects and smooth animations
+- **Smooth Animations**: Framer Motion powered animations throughout the site
+- **Responsive Design**: Fully responsive across all devices
 
-## 📁 Tech Stack
+### 🚀 Performance & UX Improvements
+- **Loading Screen**: Elegant loading screen with progress indicator
+- **Smooth Scrolling**: Custom scrollbar and smooth page transitions
+- **Interactive Elements**: Hover effects, micro-interactions, and feedback
+- **Form Handling**: Enhanced contact form with validation and submission states
+- **Navigation**: Improved header with scroll effects and active page indicators
 
-- **Frontend:** React, JSX, TailwindCSS, shadcn/ui
-- **3D Assets:** Spline
-- **Deployment:** GitHub Pages via `gh-pages` branch
+### 📱 Enhanced Components
 
-## 🛠️ Development Setup
+#### Hero Section
+- Animated gradient text and buttons
+- Interactive contact form modal
+- Social media links with hover effects
+- Download resume functionality
+- Enhanced 3D Spline integration
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io
-   cd SarabdeepSBilkhu.github.io
-   ```
+#### Projects Page
+- Featured projects section with detailed cards
+- Technology tags for each project
+- GitHub and live demo links
+- Staggered animations for project cards
+- Responsive grid layout
 
-2. **Install dependencies**
+#### Experience Page
+- Detailed experience timeline with achievements
+- Interactive skill icons with tooltips
+- Technology stack visualization
+- Animated skill progress bars
+- Comprehensive project descriptions
 
-   ```bash
-   npm install
-   ```
+#### About Page
+- Enhanced personal description
+- Animated skill progress bars
+- Interests and values section
+- Professional photo with shadow effects
+- Improved typography and spacing
 
-3. **Run the development server**
+#### Contact Page
+- Contact information cards with icons
+- Enhanced form with validation
+- Loading states and success feedback
+- Social media integration
+- Professional contact details
 
-   ```bash
-   npm run dev
-   ```
+### 🛠 Technical Improvements
 
-4. **Build for production**
+#### CSS Enhancements
+- Custom scrollbar styling
+- Advanced gradient animations
+- Glass morphism utility classes
+- Improved hover effects
+- Better responsive breakpoints
 
-   ```bash
-   npm run build
-   ```
+#### Animation System
+- Framer Motion integration
+- Staggered animations
+- Spring physics for natural movement
+- Performance optimized animations
+- Reduced motion support
 
-5. **Deploy to GitHub Pages**
+#### Component Architecture
+- Modular component structure
+- Reusable animation variants
+- Consistent styling patterns
+- Better state management
+- Improved accessibility
 
-   ```bash
-   npm run deploy
-   ```
+## 🚀 Getting Started
 
-## 🧾 License
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-This project is open-source and available under the [MIT License](LICENSE).
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io.git
+cd SarabdeepSBilkhu.github.io
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+5. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+## 📦 Dependencies
+
+### Core Dependencies
+- **React 19**: Latest React with concurrent features
+- **Vite**: Fast build tool and dev server
+- **React Router DOM**: Client-side routing
+- **Framer Motion**: Advanced animations
+- **Tailwind CSS**: Utility-first CSS framework
+
+### UI & Animation Libraries
+- **AOS**: Scroll-triggered animations
+- **React Icons**: Comprehensive icon library
+- **Spline**: 3D interactive elements
+- **Boxicons**: Additional icon set
+
+### Development Tools
+- **ESLint**: Code linting
+- **PostCSS**: CSS processing
+- **Autoprefixer**: CSS vendor prefixing
+
+## 🎯 Key Improvements Made
+
+### 1. Enhanced User Experience
+- Added loading screen with progress indicator
+- Improved navigation with active page indicators
+- Enhanced form interactions and feedback
+- Better mobile responsiveness
+
+### 2. Visual Enhancements
+- Implemented glass morphism design
+- Added gradient animations and effects
+- Enhanced typography and spacing
+- Improved color scheme and contrast
+
+### 3. Performance Optimizations
+- Optimized animations for better performance
+- Reduced bundle size
+- Improved loading times
+- Better code splitting
+
+### 4. Accessibility Improvements
+- Better keyboard navigation
+- Improved screen reader support
+- Enhanced focus indicators
+- Semantic HTML structure
+
+### 5. Code Quality
+- Modular component architecture
+- Consistent coding patterns
+- Better state management
+- Improved error handling
+
+## 🌟 Highlights
+
+- **Modern Design**: Contemporary glass morphism aesthetic
+- **Smooth Animations**: 60fps animations with Framer Motion
+- **Interactive Elements**: Engaging hover effects and micro-interactions
+- **Professional Presentation**: Clean, organized content structure
+- **Mobile First**: Responsive design for all devices
+- **Fast Performance**: Optimized for speed and efficiency
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Contact
+
+- **Email**: sarabdeep.bilkhu@gmail.com
+- **LinkedIn**: [Sarabdeep Singh Bilkhu](https://www.linkedin.com/in/sarabdeep-singh-bilkhu/)
+- **GitHub**: [@SarabdeepSBilkhu](https://github.com/SarabdeepSBilkhu)
+- **Twitter**: [@s_bilkhu_](https://x.com/s_bilkhu_)
 
 ---
 
-> Built with ❤️ by Sarabdeep Bilkhu – [@SarabdeepSBilkhu](https://github.com/SarabdeepSBilkhu)
-
+Built with ❤️ using React, Vite, and Tailwind CSS
