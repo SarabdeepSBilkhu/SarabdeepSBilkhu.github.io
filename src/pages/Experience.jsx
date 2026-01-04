@@ -35,56 +35,85 @@ const Experience = () => {
   ];
 
   const experiences = [
-    {
-      title: "Personal Portfolio Website",
-      company: "Personal Project",
-      duration: "2023 - Present",
-      description: "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
-      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
-      achievements: [
-        "Designed and developed a fully responsive portfolio website",
-        "Integrated modern UI/UX with Tailwind CSS and Framer Motion",
-        "Deployed and maintained using GitHub Pages"
-      ]
-    },
-    {
-      title: "HoloCruze",
-      company: "Personal Project",
-      duration: "2022 - 2023",
-      description: "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
-      technologies: ["Arduino", "RF Communication", "Embedded Systems"],
-      achievements: [
-        "Built a custom gesture controller using Arduino Nano",
-        "Implemented reliable RF communication for real-time control",
-        "Designed and assembled the robotic car hardware"
-      ]
-    },
-    {
-      title: "CampusSync",
-      company: "Personal Project",
-      duration: "2023",
-      description: "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
-      technologies: ["React", "Web Platform", "Productivity"],
-      achievements: [
-        "Developed a unified dashboard for student productivity",
-        "Integrated scheduling, notes, and alerts in one platform",
-        "Designed for mobile and desktop responsiveness"
-      ]
-    },
-    {
-      title: "SKARK Banking System",
-      company: "Team Project",
-      duration: "2024",
-      description: "Developed the backend for a chat-driven banking web application using Python Flask and MySQL. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript. Implemented secure authentication, account management, and transaction features via RESTful APIs.",
-      technologies: ["Python", "Flask", "MySQL", "REST API"],
-      achievements: [
-        "Designed and implemented the database schema in MySQL",
-        "Built RESTful endpoints for banking operations",
-        "Integrated secure user authentication and session management",
-        "Collaborated with Ranbir Khurana (DevRanbir) for seamless backend/frontend integration"
-      ]
-    }
-  ];
+  {
+    title: "Personal Portfolio Website",
+    company: "Personal Project",
+    duration: "2023 - Present",
+    description:
+      "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
+    technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
+    achievements: [
+      "Designed and developed a fully responsive portfolio website",
+      "Integrated modern UI/UX with Tailwind CSS and Framer Motion",
+      "Deployed and maintained using GitHub Pages"
+    ]
+  },
+  {
+    title: "SMPHorizon Discord Bot",
+    company: "Personal / Community Project",
+    duration: "2024",
+    description:
+      "Built a full-featured Discord bot for the SMPHorizon Minecraft community, handling voice-based play sessions, AI-powered chat, persistent user memory, XP tracking, moderation, and live Aternos server status. Designed as a single integrated system with long-running reliability and persistent storage.",
+    technologies: [
+      "Python",
+      "discord.py",
+      "SQLite",
+      "Groq API",
+      "Llama 3.1",
+      "aiohttp",
+      "mcstatus"
+    ],
+    achievements: [
+      "Implemented Minecraft voice session tracking with playtime logging and leaderboards",
+      "Built an AI assistant with long-term user memory and private DM support using Groq-hosted Llama 3.1",
+      "Designed an XP and leveling system backed by persistent SQLite storage",
+      "Integrated live Aternos server status monitoring via mcstatus",
+      "Developed automated moderation features including banned-word filtering and warning system",
+      "Deployed and maintained the bot on Railway with environment-based configuration"
+    ]
+  },
+  {
+    title: "Backend-in-a-Box",
+    company: "Open Source Project",
+    duration: "2024",
+    description:
+      "Designed a schema-driven backend framework that generates production-ready FastAPI applications from YAML definitions. The system auto-generates database models, CRUD APIs, validation layers, and migrations, eliminating repetitive backend setup while preserving extensibility.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Alembic",
+      "Docker",
+      "JWT",
+      "Celery",
+      "Redis"
+    ],
+    achievements: [
+      "Designed a YAML-based schema system to define models, fields, and relationships declaratively",
+      "Built a code generator that produces SQLAlchemy models, CRUD routers, and Pydantic schemas",
+      "Implemented JWT-based authentication with secure password hashing",
+      "Integrated Alembic migrations for automated schema evolution",
+      "Containerized the entire stack with Docker and Docker Compose for one-command startup",
+      "Created an extension and hook system for injecting custom business logic without modifying core code"
+    ]
+  },
+  {
+    title: "SKARK Banking System",
+    company: "Team Project",
+    duration: "2024",
+    description:
+      "Developed the backend for a chat-driven banking web application using Python Flask and MySQL. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript. Implemented secure authentication, account management, and transaction features via RESTful APIs.",
+    technologies: ["Python", "Flask", "MySQL", "REST API"],
+    achievements: [
+      "Designed and implemented the database schema in MySQL",
+      "Built RESTful endpoints for banking operations",
+      "Integrated secure user authentication and session management",
+      "Collaborated with Ranbir Khurana (DevRanbir) for seamless backend/frontend integration"
+    ]
+  }
+];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },

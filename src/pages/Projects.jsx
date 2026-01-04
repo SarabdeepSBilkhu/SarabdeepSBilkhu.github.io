@@ -14,22 +14,56 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "HoloCruze",
+      title: "SMPHorizon Discord Bot",
+      company: "Personal / Community Project",
+      duration: "2024",
       description:
-        "A gesture-controlled robotic car powered by RF communication for smooth, wireless navigation. The system features an Arduino Nano-based gesture controller and a vehicle unit built with an Arduino Uno alternative. RF transmitter/receiver modules enable real-time, reliable control—no Bluetooth or Wi-Fi needed.",
-      technologies: ["Arduino", "RF Communication", "Embedded Systems"],
-      link: "https://SarabdeepSBilkhu.github.io/HoloCruze",
-      github: "https://github.com/SarabdeepSBilkhu/HoloCruze",
+        "Built a full-featured Discord bot for the SMPHorizon Minecraft community, handling voice-based play sessions, AI-powered chat, persistent user memory, XP tracking, moderation, and live Aternos server status. Designed as a single integrated system with long-running reliability and persistent storage.",
+      technologies: [
+        "Python",
+        "discord.py",
+        "SQLite",
+        "Groq API",
+        "Llama 3.1",
+        "aiohttp",
+        "mcstatus"
+      ],
+      achievements: [
+        "Implemented Minecraft voice session tracking with playtime logging and leaderboards",
+        "Built an AI assistant with long-term user memory and private DM support using Groq-hosted Llama 3.1",
+        "Designed an XP and leveling system backed by persistent SQLite storage",
+        "Integrated live Aternos server status monitoring via mcstatus",
+        "Developed automated moderation features including banned-word filtering and warning system",
+        "Deployed and maintained the bot on Railway with environment-based configuration"
+      ],
       image: "/project2.jpg",
       featured: true
     },
     {
-      title: "CampusSync",
+      title: "Backend-in-a-Box",
+      company: "Open Source Project",
+      duration: "2024",
       description:
-        "A centralized web platform designed to simplify student life. CampusSync combines class schedules, study notes, placement alerts, and roommate coordination into a single responsive interface—cutting through clutter and maximizing academic productivity.",
-      technologies: ["React", "Web Platform", "Productivity"],
-      link: "https://SarabdeepSBilkhu.github.io/CampusSync",
-      github: "https://github.com/SarabdeepSBilkhu/CampusSync",
+        "Designed a schema-driven backend framework that generates production-ready FastAPI applications from YAML definitions. The system auto-generates database models, CRUD APIs, validation layers, and migrations, eliminating repetitive backend setup while preserving extensibility.",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Alembic",
+        "Docker",
+        "JWT",
+        "Celery",
+        "Redis"
+      ],
+      achievements: [
+        "Designed a YAML-based schema system to define models, fields, and relationships declaratively",
+        "Built a code generator that produces SQLAlchemy models, CRUD routers, and Pydantic schemas",
+        "Implemented JWT-based authentication with secure password hashing",
+        "Integrated Alembic migrations for automated schema evolution",
+        "Containerized the entire stack with Docker and Docker Compose for one-command startup",
+        "Created an extension and hook system for injecting custom business logic without modifying core code"
+      ],
       image: "/project3.jpg",
       featured: true
     },
