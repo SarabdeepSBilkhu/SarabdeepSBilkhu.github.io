@@ -117,76 +117,80 @@ const Projects = () => {
           My Projects
         </h2>
       </motion.div>
-
-      {/* Featured Projects */}
+      
+      {/* All Projects Grid */}
       <motion.div 
-        className="mb-8 md:mb-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h3 className="text-lg font-semibold mb-6 text-white">Featured Projects</h3>
+        <h3 className="text-lg font-semibold mb-6 text-white">All Projects</h3>
         <motion.div 
-          className="grid lg:grid-cols-2 gap-6 md:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {projectList.filter(project => project.featured).map((project, index) => (
+          {projectList.map((project, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 backdrop-blur-md
-                bg-white/5 hover:bg-white/10 transition-all duration-500 card-hover"
+              className="group relative overflow-hidden rounded-xl border border-white/10 backdrop-blur-md
+                bg-white/5 hover:bg-white/10 transition-all duration-300 card-hover"
             >
-              <div className="p-4 md:p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg md:text-xl font-semibold text-white">{project.title}</h3>
-                  <div className="flex gap-2">
+              <div className="p-4">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <div className="flex gap-1">
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
+                      className="p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <FiGithub className="w-4 h-4" />
+                      <FiGithub className="w-3 h-3" />
                     </motion.a>
                     <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
+                      className="p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <FiExternalLink className="w-4 h-4" />
+                      <FiExternalLink className="w-3 h-3" />
                     </motion.a>
                   </div>
                 </div>
                 
-                <p className="text-sm text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-xs text-gray-300 mb-3 leading-relaxed">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
+                <div className="flex flex-wrap gap-1 mb-3">
+                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-xs rounded-full glass-effect border border-white/10"
+                      className="px-2 py-1 text-xs rounded-full glass-effect border border-white/10"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-1 text-xs rounded-full glass-effect border border-white/10">
+                      +{project.technologies.length - 3} more
+                    </span>
+                  )}
                 </div>
 
                 <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  whileHover={{ x: 5 }}
+                  className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                  whileHover={{ x: 3 }}
                 >
-                  View Project <FiEye className="w-4 h-4" />
+                  View Project <FiEye className="w-3 h-3" />
                 </motion.a>
               </div>
             </motion.div>
