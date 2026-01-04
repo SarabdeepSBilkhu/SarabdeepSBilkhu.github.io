@@ -8,30 +8,22 @@ import {
 import {
   SiTailwindcss,
   SiJavascript,
-  SiNextdotjs,
-  SiOpenai,
-  SiMongodb,
   SiNodedotjs,
   SiTypescript,
-  SiPostgresql,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const Experience = () => {
   const skills = [
-    { name: "React", icon: FaReact, color: "text-cyan-400" },
-    { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
-    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
-    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
     { name: "Python", icon: FaPython, color: "text-blue-300" },
-    { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
     { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
     { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
     { name: "Tailwind", icon: SiTailwindcss, color: "text-teal-300" },
+    { name: "React", icon: FaReact, color: "text-cyan-400" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+    { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
     { name: "Git", icon: FaGitAlt, color: "text-orange-400" },
-    { name: "MongoDB", icon: SiMongodb, color: "text-green-400" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
-    { name: "OpenAI", icon: SiOpenai, color: "text-green-400" },
   ];
 
   const experiences = [
