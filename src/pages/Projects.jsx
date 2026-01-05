@@ -140,29 +140,33 @@ const Projects = () => {
               key={index}
               variants={cardVariants}
               className="group relative overflow-hidden rounded-xl border border-white/10 backdrop-blur-md
-                bg-white/5 hover:bg-white/10 transition-all duration-300 card-hover"
+                bg-white/5 hover:bg-white/10 transition-all duration-300 card-hover flex flex-col h-full"
             >
-              <div className="p-4">
+              <div className="p-4 flex flex-col flex-grow">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-lg font-semibold">{project.title}</h3>
                   <div className="flex gap-1">
                     <motion.a
-                      href={project.github}
-                      target="_blank"
+                      href={(project.github && project.github !== '#') ? project.github : '#'}
+                      target={(project.github && project.github !== '#') ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 ${
+                        (!project.github || project.github === '#') ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                      whileHover={(project.github && project.github !== '#') ? { scale: 1.1 } : {}}
+                      whileTap={(project.github && project.github !== '#') ? { scale: 0.9 } : {}}
                     >
                       <FiGithub className="w-3 h-3" />
                     </motion.a>
                     <motion.a
-                      href={project.link}
-                      target="_blank"
+                      href={(project.link && project.link !== '#') ? project.link : '#'}
+                      target={(project.link && project.link !== '#') ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 ${
+                        (!project.link || project.link === '#') ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                      whileHover={(project.link && project.link !== '#') ? { scale: 1.1 } : {}}
+                      whileTap={(project.link && project.link !== '#') ? { scale: 0.9 } : {}}
                     >
                       <FiExternalLink className="w-3 h-3" />
                     </motion.a>
@@ -188,11 +192,13 @@ const Projects = () => {
                 </div>
 
                 <motion.a
-                  href={project.link}
-                  target="_blank"
+                  href={(project.link && project.link !== '#') ? project.link : (project.github && project.github !== '#') ? project.github : '#'}
+                  target={(project.link && project.link !== '#') || (project.github && project.github !== '#') ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  whileHover={{ x: 3 }}
+                  className={`inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors duration-300 mt-auto ${
+                    !((project.link && project.link !== '#') || (project.github && project.github !== '#')) ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                  whileHover={((project.link && project.link !== '#') || (project.github && project.github !== '#')) ? { x: 3 } : {}}
                 >
                   View Project <FiEye className="w-3 h-3" />
                 </motion.a>

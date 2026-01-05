@@ -1,6 +1,6 @@
 import "boxicons/css/boxicons.min.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiGithub, FiTwitter, FiLinkedin, FiMenu, FiX, FiHome, FiUser, FiCode, FiBriefcase, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiMail, FiCpu } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const Header = () => {
     { name: "Home", path: "/", icon: FiHome },
     { name: "About", path: "/about", icon: FiUser },
     { name: "Projects", path: "/projects", icon: FiCode },
-    {/* { name: "Experience", path: "/experience", icon: FiBriefcase } */},
+    { name: "Skills", path: "/skills", icon: FiCpu },
     { name: "Contact", path: "/contact", icon: FiMail },
   ];
 
@@ -116,29 +116,6 @@ const Header = () => {
           >
             <FiLinkedin className="w-5 h-5" />
           </motion.a>
-
-          <motion.a
-            variants={itemVariants}
-            href="https://x.com/s_bilkhu_"
-            className="text-gray-300 hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-white/10"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FiTwitter className="w-5 h-5" />
-          </motion.a>
-        </motion.div>
-
-        <motion.div 
-          className="md:hidden flex items-center z-50"
-          variants={itemVariants}
-        >
-          <motion.button
-            whileTap={{ scale: 0.7 }}
-            onClick={toggleMenu}
-            className="text-white p-2 rounded-full hover:bg-white/10 transition-all duration-300"
-          >
-            {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-          </motion.button>
         </motion.div>
       </div>
 

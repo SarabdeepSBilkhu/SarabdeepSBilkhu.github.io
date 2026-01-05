@@ -3,13 +3,7 @@ import { FiUser, FiCode, FiHeart, FiTarget, FiAward } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const skills = [
-    { name: "Backend Development", level: 95 },
-    { name: "Frontend Development", level: 85 },
-    { name: "UI/UX Design", level: 80 },
-    { name: "AI/ML Integration", level: 75 },
-    { name: "DevOps", level: 70 }
-  ];
+
 
   const interests = [
     { icon: FiCode, title: "Open Source", description: "Contributing to meaningful projects" },
@@ -131,36 +125,7 @@ const About = () => {
         {/* Technical Skills and Interests - each covers full width, stacked vertically */}
         <div className="mt-12 flex flex-col gap-10">
           {/* Skills Section */}
-          <motion.div 
-            className="w-full bg-black/40 rounded-xl p-8 shadow-lg"
-            variants={itemVariants}
-          >
-            <h3 className="text-2xl font-bold mb-6 text-white text-center">Technical Skills</h3>
-            <div className="space-y-3 max-w-3xl mx-auto">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="flex items-center justify-between"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <span className="text-lg font-medium">{skill.name}</span>
-                  <div className="flex items-center gap-2">
-                    <div className="w-40 h-3 bg-white/10 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                    <span className="text-base text-gray-400 w-10">{skill.level}%</span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+
           {/* Interests Section */}
           <motion.div 
             className="w-full bg-black/40 rounded-xl p-8 shadow-lg"

@@ -80,22 +80,8 @@ const Hero = () => {
           <div className="absolute bottom-4 right-4 w-36 h-11 bg-black rounded-md z-20" />
         </motion.div>
         
-        {/* Mobile 3D Model */}
-        <motion.div
-          className="lg:hidden w-full h-[220px] mx-auto rounded-lg shadow-2xl overflow-hidden mb-8"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <Spline scene="https://prod.spline.design/JLccJBIspasqBmdj/scene.splinecode" />
-        </motion.div>
-
         {/* Content - with right margin on desktop to make space for 3D model */}
-        <div className="lg:mr-[480px]">
+        <div className="lg:mr-[480px] flex flex-col items-center lg:items-start text-center lg:text-left">
           <motion.div
             className="introducing-container lg:text-xl sm:text-lg 
             text-sm w-full md:w-[300px] h-[33px] font-bold
@@ -132,7 +118,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div 
-            className="mt-8 flex flex-col sm:flex-row gap-4"
+            className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -141,8 +127,8 @@ const Hero = () => {
               href="#"
               onClick={(e) => { e.preventDefault(); openContactForm(); }}
               className="w-full sm:w-[208px] h-[44px] inline-flex items-center 
-              justify-center border-white rounded-full 
-              text-sm tracking-wider contact-button glass-effect"
+              justify-center border border-white/20 rounded-full 
+              text-sm tracking-wider glass-effect hover:bg-white/10 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -159,7 +145,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
                 <FiDownload className="mr-2" />
-               Download Resume
+                  View Resume
             </motion.a>
           </motion.div>
         </div>
