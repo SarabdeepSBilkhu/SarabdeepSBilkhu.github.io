@@ -15,7 +15,7 @@ const Header = () => {
     { name: "Home", path: "/", icon: FiHome },
     { name: "About", path: "/about", icon: FiUser },
     { name: "Projects", path: "/projects", icon: FiCode },
-    {/* { name: "Experience", path: "/experience", icon: FiBriefcase }, */}
+    {/* { name: "Experience", path: "/experience", icon: FiBriefcase } */},
     { name: "Contact", path: "/contact", icon: FiMail },
   ];
 
