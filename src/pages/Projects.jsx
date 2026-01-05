@@ -36,6 +36,8 @@ const Projects = () => {
         "Developed automated moderation features including banned-word filtering and warning system",
         "Deployed and maintained the bot on Railway with environment-based configuration"
       ],
+      link: "#",
+      github: "https://github.com/SarabdeepSBilkhu/SMPHorizon_Bot",
       image: "/project2.jpg",
       featured: true
     },
@@ -64,6 +66,8 @@ const Projects = () => {
         "Containerized the entire stack with Docker and Docker Compose for one-command startup",
         "Created an extension and hook system for injecting custom business logic without modifying core code"
       ],
+      link: "#",
+      github: "https://github.com/SarabdeepSBilkhu/Backend-in-a-Box",
       image: "/project3.jpg",
       featured: true
     },
