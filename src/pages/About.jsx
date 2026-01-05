@@ -1,8 +1,10 @@
 import "boxicons/css/boxicons.min.css";
 import { FiUser, FiCode, FiHeart, FiTarget, FiAward } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const About = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
 
   const interests = [
@@ -55,13 +57,14 @@ const About = () => {
         <motion.div
           className="hidden lg:block lg:absolute lg:top-4 lg:right-20 lg:w-[520px] lg:h-[550px] rounded-lg shadow-2xl overflow-hidden"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1 }}
         >
           <img 
             className="w-full h-full object-cover rounded-lg shadow-2xl"
             src="/avatar.PNG"
             alt="Sarabdeep Singh Bilkhu"
+            onLoad={() => setIsLoaded(true)}
           />
         </motion.div>
         
@@ -69,13 +72,14 @@ const About = () => {
         <motion.div
           className="lg:hidden w-full h-[420px] mx-auto rounded-lg shadow-2xl overflow-hidden mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1 }}
         >
           <img 
             className="w-full h-full object-cover rounded-lg shadow-2xl"
             src="/avatar.PNG"
             alt="Sarabdeep Singh Bilkhu"
+            onLoad={() => setIsLoaded(true)}
           />
         </motion.div>
         
