@@ -183,7 +183,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-- **Email**: sarabdeep.bilkhu@gmail.com
+- **Email**: sanjhbilkhu2006@gmail.com
 - **LinkedIn**: [Sarabdeep Singh Bilkhu](https://www.linkedin.com/in/sarabdeep-singh-bilkhu/)
 - **GitHub**: [@SarabdeepSBilkhu](https://github.com/SarabdeepSBilkhu)
 - **Twitter**: [@s_bilkhu_](https://x.com/s_bilkhu_)
