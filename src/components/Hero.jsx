@@ -67,7 +67,7 @@ const Hero = () => {
         
         {/* 3D Model - positioned absolutely on desktop, static on mobile */}
         <motion.div
-          className="hidden lg:block lg:absolute lg:top-8 lg:right-32 lg:w-[480px] lg:h-[480px] rounded-lg shadow-2xl overflow-hidden"
+          className="hidden lg:block lg:absolute lg:top-8 lg:right-4 xl:right-32 lg:w-[480px] lg:h-[480px] rounded-lg shadow-2xl overflow-hidden"
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
           data-aos-delay="300"

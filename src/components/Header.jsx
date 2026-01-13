@@ -1,6 +1,6 @@
 import "boxicons/css/boxicons.min.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiMail, FiCpu } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiMail, FiCpu, FiMenu, FiX, FiTwitter } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -72,7 +72,7 @@ const Header = () => {
           className="lg:flex hidden space-x-8"
           variants={containerVariants}
         >
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <motion.div
               key={item.name}
               variants={itemVariants}
@@ -117,6 +117,13 @@ const Header = () => {
             <FiLinkedin className="w-5 h-5" />
           </motion.a>
         </motion.div>
+        <motion.button
+          className="lg:hidden text-white focus:outline-none p-2"
+          onClick={toggleMenu}
+          whileTap={{ scale: 0.9 }}
+        >
+          {isOpen ? <FiX className="w-8 h-8" /> : <FiMenu className="w-8 h-8" />}
+        </motion.button>
       </div>
 
       <AnimatePresence>
@@ -126,7 +133,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-md text-white z-50 shadow-lg border-b border-white/10"
+            className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-md text-white z-50 shadow-lg border-b border-white/10"
           >
             <motion.nav 
               className="flex flex-col space-y-2 p-4"
