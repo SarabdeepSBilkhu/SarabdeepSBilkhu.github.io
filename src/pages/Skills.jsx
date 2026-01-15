@@ -1,6 +1,7 @@
 import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import { SiTailwindcss, SiJavascript, SiNodedotjs, SiTypescript } from "react-icons/si";
-import { motion } from "framer-motion";
+import ScrollReveal from "../components/ScrollReveal";
+
 
 const Skills = () => {
   const skills = [
@@ -15,34 +16,12 @@ const Skills = () => {
     { name: "Git", icon: FaGitAlt, color: "text-orange-400" },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
 
   return (
     <section className="py-16 px-6 relative min-h-screen">
-      <motion.div 
+      <ScrollReveal 
         className="relative inline-block w-full mb-16"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
       >
         <div className="flex flex-col items-center justify-center gap-6">
           <h2
@@ -56,25 +35,22 @@ const Skills = () => {
             My technical toolbox and the technologies I work with.
           </p>
         </div>
-      </motion.div>
+      </ScrollReveal>
 
-      <motion.div 
+      <div 
         className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
         {skills.map((skill, index) => (
-          <motion.div
+          <ScrollReveal
             key={skill.name}
-            variants={itemVariants}
             className="flex flex-col items-center p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2"
+            delay={index * 0.05}
           >
             <skill.icon className={`${skill.color} text-5xl mb-4 group-hover:scale-110 transition-transform duration-300`} />
             <span className="text-gray-200 font-medium">{skill.name}</span>
-          </motion.div>
+          </ScrollReveal>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

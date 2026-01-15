@@ -2,31 +2,68 @@ import "boxicons/css/boxicons.min.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiMail, FiCpu, FiMenu, FiX, FiTwitter } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+
+const navItems = [
+  { name: "Home", path: "#home", icon: FiHome, id: 'home' },
+  { name: "About", path: "#about", icon: FiUser, id: 'about' },
+  { name: "Projects", path: "#projects", icon: FiCode, id: 'projects' },
+  { name: "Skills", path: "#skills", icon: FiCpu, id: 'skills' },
+  { name: "Contact", path: "#contact", icon: FiMail, id: 'contact' },
+];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
   
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  const navItems = [
-    { name: "Home", path: "/", icon: FiHome },
-    { name: "About", path: "/about", icon: FiUser },
-    { name: "Projects", path: "/projects", icon: FiCode },
-    { name: "Skills", path: "/skills", icon: FiCpu },
-    { name: "Contact", path: "/contact", icon: FiMail },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -35% 0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    navItems.forEach(item => {
+      const element = document.getElementById(item.id);
+      if (element) observer.observe(element);
+    });
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
+
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const element = document.querySelector(path);
+    if (element) {
+      const offsetTop = element.offsetTop;
+      window.scrollTo({
+        top: offsetTop - 80, // Adjust for header height
+        behavior: 'smooth'
+      });
+      setIsOpen(false);
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -53,8 +90,8 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`z-50 flex justify-between mb-6 md:mb-12 pt-6 md:pt-10 items-center transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10' : ''
+      className={`z-50 sticky top-0 flex justify-between pt-6 pb-6 md:pt-4 md:pb-4 items-center transition-all duration-300 ${
+        scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent'
       }`}
       initial="hidden"
       animate="visible"
@@ -62,8 +99,9 @@ const Header = () => {
     >
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <motion.div 
-          className="lg:text-5xl md:text-3xl text-xl font-extrabold text-white leading-tight"
+          className="lg:text-4xl md:text-2xl text-xl font-extrabold text-white leading-tight cursor-pointer"
           variants={itemVariants}
+          onClick={(e) => handleNavClick(e, '#home')}
         >
           Sarabdeep Singh Bilkhu
         </motion.div>
@@ -77,18 +115,19 @@ const Header = () => {
               key={item.name}
               variants={itemVariants}
             >
-              <Link
-                to={item.path}
+              <a
+                href={item.path}
+                onClick={(e) => handleNavClick(e, item.path)}
                 className={`relative text-gray-300 hover:text-white transition-all duration-300 group flex items-center gap-1 ${
-                  location.pathname === item.path ? 'text-white' : ''
+                  activeSection === item.id ? 'text-white' : ''
                 }`}
               >
                 <item.icon className="w-4 h-4" />
                 {item.name}
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:w-full ${
-                  location.pathname === item.path ? 'w-full' : ''
+                  activeSection === item.id ? 'w-full' : ''
                 }`}></span>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </motion.nav>
@@ -133,7 +172,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-md text-white z-50 shadow-lg border-b border-white/10"
+            className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md text-white z-50 shadow-lg border-b border-white/10"
           >
             <motion.nav 
               className="flex flex-col space-y-2 p-4"
@@ -148,16 +187,16 @@ const Header = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link
-                    onClick={toggleMenu}
+                  <a
+                    href={item.path}
+                    onClick={(e) => handleNavClick(e, item.path)}
                     className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 hover:bg-white/10 ${
-                      location.pathname === item.path ? 'bg-white/10 text-white' : 'text-gray-300'
+                      activeSection === item.id ? 'bg-white/10 text-white' : 'text-gray-300'
                     }`}
-                    to={item.path}
                   >
                     <item.icon className="w-4 h-4" />
                     {item.name}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </motion.nav>

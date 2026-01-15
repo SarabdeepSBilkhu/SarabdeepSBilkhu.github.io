@@ -1,17 +1,25 @@
 import { FiExternalLink, FiGithub, FiCode, FiEye } from "react-icons/fi";
 import { motion } from "framer-motion";
+import ScrollReveal from "../components/ScrollReveal";
+
 
 const Projects = () => {
   const projectList = [
     {
-      title: "Personal Portfolio Website",
+      title: "AlgoTrace - Advanced Algorithm Visualizer",
       description:
-        "The source code for my personal website, built and hosted using GitHub Pages. A simple space to showcase my projects, skills, and ideas.",
-      technologies: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
-      link: "https://sarabdeepsbilkhu.github.io",
-      github: "https://github.com/SarabdeepSBilkhu/SarabdeepSBilkhu.github.io",
+        "A next-generation algorithm visualizer featuring a 'Time-Travel' debugging engine to record, replay, and scrub through algorithm execution steps. Includes multi-structure visualization for arrays and graphs, plus an integrated Monaco code editor.",
+      technologies: ["React", "TypeScript", "Vite", "Framer Motion", "Monaco Editor"],
+      link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
+      github: "https://github.com/SarabdeepSBilkhu/algotrace",
       image: "/project1.jpg",
-      featured: true
+      featured: true,
+      achievements: [
+        "Implemented deterministic 'Time-Travel' debugging to step forward/backward through algorithms",
+        "Built a custom Proxy-based JS execution engine to capture comparisons and swaps",
+        "Integrated Monaco Editor for in-browser code writing and execution",
+        "Designed a modern 'Dark Glass' aesthetic with smooth Framer Motion animations"
+      ]
     },
     {
       title: "SMPHorizon Discord Bot",
@@ -83,35 +91,13 @@ const Projects = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
 
   return (
     <section className="py-8 md:py-16 px-4 md:px-6 relative min-h-screen">
       {/* Section Heading */}
-      <motion.div 
+      <ScrollReveal 
         className="relative inline-block p-4 mb-8 md:mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
       >
         <h2 className="lg:text-xl sm:text-lg text-sm font-bold 
           flex items-center justify-center relative z-10 
@@ -120,27 +106,22 @@ const Projects = () => {
           <FiCode className="mr-2" />
           My Projects
         </h2>
-      </motion.div>
+      </ScrollReveal>
       
       {/* All Projects Grid */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-      >
-        <h3 className="text-lg font-semibold mb-6 text-white">All Projects</h3>
-        <motion.div 
+      <div>
+        <ScrollReveal>
+             <h3 className="text-lg font-semibold mb-6 text-white">All Projects</h3>
+        </ScrollReveal>
+        <div 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
         >
           {projectList.map((project, index) => (
-            <motion.div
+            <ScrollReveal
               key={index}
-              variants={cardVariants}
               className="group relative overflow-hidden rounded-xl border border-white/10 backdrop-blur-md
                 bg-white/5 hover:bg-white/10 transition-all duration-300 card-hover flex flex-col h-full"
+              delay={index * 0.1}
             >
               <div className="p-4 flex flex-col flex-grow">
                 <div className="flex items-start justify-between mb-3">
@@ -203,10 +184,10 @@ const Projects = () => {
                   View Project <FiEye className="w-3 h-3" />
                 </motion.a>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

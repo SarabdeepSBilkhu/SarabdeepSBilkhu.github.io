@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
   * {
     cursor: none !important;
   }
@@ -39,7 +43,8 @@
       @apply cursor-auto;
     }
     /* Improve touch targets */
-    button, a {
+    button,
+    a {
       min-height: 44px;
       min-width: 44px;
     }
@@ -59,18 +64,25 @@
   }
 }
 
-@layer components{
-  .introducing-container{
+@layer components {
+  .introducing-container {
     position: absolute;
     inset: 0 0 0 0;
     z-index: -1;
     border-radius: 20px;
-    background: linear-gradient(45deg, #9657de, #383abe, #389ec3, #0095ff, #9657de);
+    background: linear-gradient(
+      45deg,
+      #9657de,
+      #383abe,
+      #389ec3,
+      #0095ff,
+      #9657de
+    );
     background-size: 400% 400%;
     animation: gradientShift 3s ease infinite;
   }
 
-  .contact-button{
+  .contact-button {
     box-shadow: inset 0px 0px 6px rgba(255, 255, 255, 0.25);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -78,13 +90,18 @@
   }
 
   .contact-button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     transition: left 0.5s;
   }
 
@@ -92,7 +109,7 @@
     left: 100%;
   }
 
-  .contact-button:hover{
+  .contact-button:hover {
     box-shadow: inset 0px 0px 100px rgb(154, 204, 255);
     transform: translateY(-2px);
   }
@@ -150,21 +167,24 @@
       transform: none;
       box-shadow: none;
     }
-    
+
     .skill-icon:hover {
       transform: none;
       filter: none;
     }
-    
+
     .contact-button:hover {
       transform: none;
     }
   }
 }
 
-@layer utilities{
-  .bg-gradient-radial{
-    background-image: radial-gradient(circle at 50% 70%, var(--tw-gradient-stops));
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(
+      circle at 50% 70%,
+      var(--tw-gradient-stops)
+    );
   }
 
   .text-shadow {
@@ -193,29 +213,53 @@
 
 /* Keyframe animations */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 5px rgba(150, 87, 222, 0.5); }
-  100% { box-shadow: 0 0 20px rgba(150, 87, 222, 0.8); }
+  0% {
+    box-shadow: 0 0 5px rgba(150, 87, 222, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(150, 87, 222, 0.8);
+  }
 }
 
 /* Loading animation */
 @keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   background-size: 200px 100%;
   animation: shimmer 2s infinite;
 }

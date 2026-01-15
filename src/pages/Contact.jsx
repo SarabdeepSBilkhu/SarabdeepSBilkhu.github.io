@@ -1,6 +1,7 @@
 import { FiMail, FiUser, FiMessageSquare, FiMapPin, FiPhone, FiSend } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ScrollReveal from "../components/ScrollReveal";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +37,7 @@ const Contact = () => {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     }
     setIsSubmitting(false);
@@ -64,35 +65,13 @@ const Contact = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
 
   return (
     <section className="py-8 md:py-16 px-4 md:px-6 relative min-h-screen">
       {/* Section Heading */}
-      <motion.div 
+      <ScrollReveal 
         className="relative inline-block p-4 mb-8 md:mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
       >
         <h2 className="lg:text-xl sm:text-lg text-sm font-bold 
           flex items-center justify-center relative z-10 
@@ -101,18 +80,14 @@ const Contact = () => {
           <FiMail className="mr-2" />
           Contact Me
         </h2>
-      </motion.div>
+      </ScrollReveal>
 
-      <motion.div 
+      <div 
         className="max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
         {/* Contact Information */}
-        <motion.div 
+        <ScrollReveal 
           className="mb-8 md:mb-12"
-          variants={itemVariants}
         >
           <h3 className="text-lg font-semibold mb-6 text-white">Get in Touch</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -134,12 +109,11 @@ const Contact = () => {
               </motion.a>
             ))}
           </div>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Contact Form */}
-        <motion.div 
+        <ScrollReveal 
           className="max-w-2xl mx-auto"
-          variants={itemVariants}
         >
           <div className="glass-effect rounded-2xl shadow-xl p-6 md:p-8">
             <h3 className="text-xl font-semibold mb-6 text-white">Send a Message</h3>
@@ -217,12 +191,12 @@ const Contact = () => {
               )}
             </form>
           </div>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Additional Info */}
-        <motion.div 
+        <ScrollReveal 
           className="mt-8 md:mt-12 text-center"
-          variants={itemVariants}
+          delay={0.2}
         >
           <p className="text-gray-400 text-sm mb-4">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
@@ -253,8 +227,8 @@ const Contact = () => {
               </svg>
             </motion.a>
           </div>
-        </motion.div>
-      </motion.div>
+        </ScrollReveal>
+      </div>
     </section>
   );
 };

@@ -2,8 +2,9 @@ import "boxicons/css/boxicons.min.css";
 import Spline from "@splinetool/react-spline";
 import { FiUser, FiMail, FiMessageSquare, FiX, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
 import { useState, useContext, useEffect } from "react";
-import { CursorContext } from "../App";
+import { CursorContext } from "../context/CursorContext";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollReveal from "../components/ScrollReveal";
 
 const Hero = () => {
 
@@ -62,44 +63,34 @@ const Hero = () => {
     };
 
   return (
-    <main className="flex flex-1 flex-col justify-between h-full">
+    <main className="flex flex-1 flex-col justify-between min-h-screen py-12">
       <div className="w-full px-4 md:px-10 lg:px-20 py-8 relative">
         
         {/* 3D Model - positioned absolutely on desktop, static on mobile */}
-        <motion.div
+        <ScrollReveal
           className="hidden lg:block lg:absolute lg:top-8 lg:right-4 xl:right-32 lg:w-[480px] lg:h-[480px] rounded-lg shadow-2xl overflow-hidden"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          delay={0.5}
         >
           <Spline scene="https://prod.spline.design/JLccJBIspasqBmdj/scene.splinecode" />
           <div className="absolute bottom-4 right-4 w-36 h-11 bg-black rounded-md z-20" />
-        </motion.div>
+        </ScrollReveal>
         
         {/* Content - with right margin on desktop to make space for 3D model */}
         <div className="lg:mr-[480px] flex flex-col items-center lg:items-start text-center lg:text-left">
-          <motion.div
+          <ScrollReveal
             className="introducing-container lg:text-xl sm:text-lg 
             text-sm w-full md:w-[300px] h-[33px] font-bold
             flex items-center justify-center mb-8 relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            delay={0.2}
           >
             <div className="text-white">
               Developer Portfolio
             </div>
-          </motion.div>
+          </ScrollReveal>
 
-          <motion.div
+          <ScrollReveal
             className="max-w-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            delay={0.4}
           >
             <h1
               className="lg:text-5xl sm:text-4xl text-2xl 
@@ -115,13 +106,11 @@ const Hero = () => {
                 but also provide real value to their users. My approach is rooted in clean, efficient code and 
                 thoughtful design that prioritizes both performance and usability.
             </p>
-          </motion.div>
+          </ScrollReveal>
 
-          <motion.div 
+          <ScrollReveal 
             className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            delay={0.6}
           >
             <motion.a
               href="#"
@@ -147,7 +136,7 @@ const Hero = () => {
                 <FiDownload className="mr-2" />
                   View Resume
             </motion.a>
-          </motion.div>
+          </ScrollReveal>
         </div>
         
         <AnimatePresence>
@@ -258,24 +247,17 @@ const Hero = () => {
       </AnimatePresence>
       </div>
 
-      <motion.div 
+      <ScrollReveal 
         className="mt-auto px-4"
-        data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="300"
-        data-aos-offset="0"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.0 }}
-
+        delay={1.0}
       >
         <motion.h1 
           className="lg:text-3xl md:text-2xl text-lg
-          font-extrabold mb-8 tracking-wider text-center text-white"
+          font-extrabold mb-12 tracking-wider text-center text-white"
         >
           "Clean code. Clear visuals. Useful insights."
         </motion.h1>
-      </motion.div>
+      </ScrollReveal>
     </main>
   );
 };

@@ -1,29 +1,26 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import React, { useEffect, useState, createContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
+
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+
 import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
-import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
 
-export const CursorContext = createContext({ cursorVisible: true, setCursorVisible: () => {} });
+
+import { CursorContext } from './context/CursorContext';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [cursorVisible, setCursorVisible] = useState(true);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1500,
-      once: true,
-    });
+    // AOS removed in favor of custom ScrollReveal
   }, []);
 
   const handleLoadingComplete = () => {
@@ -49,13 +46,25 @@ const App = () => {
           >
             <Header />
 
-            <Routes>
-              <Route path="/" element={<Hero />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+
+            
+            <main className="flex flex-col gap-0">
+              <section id="home">
+                <Hero />
+              </section>
+              <section id="about">
+                <About />
+              </section>
+              <section id="projects">
+                <Projects />
+              </section>
+              <section id="skills">
+                <Skills />
+              </section>
+              <section id="contact">
+                <Contact />
+              </section>
+            </main>
           </motion.div>
         </CursorContext.Provider>
       )}
