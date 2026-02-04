@@ -9,7 +9,6 @@ const Projects = () => {
       title: "AlgoTrace - Advanced Algorithm Visualizer",
       description:
         "A next-generation algorithm visualizer featuring a 'Time-Travel' debugging engine to record, replay, and scrub through algorithm execution steps. Includes multi-structure visualization for arrays and graphs, plus an integrated Monaco code editor.",
-      technologies: ["React", "TypeScript", "Vite", "Framer Motion", "Monaco Editor"],
       link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
       github: "https://github.com/SarabdeepSBilkhu/algotrace",
       image: "/project1.jpg",
@@ -27,15 +26,6 @@ const Projects = () => {
       duration: "2024",
       description:
         "Built a full-featured Discord bot for the SMPHorizon Minecraft community, handling voice-based play sessions, AI-powered chat, persistent user memory, XP tracking, moderation, and live Aternos server status. Designed as a single integrated system with long-running reliability and persistent storage.",
-      technologies: [
-        "Python",
-        "discord.py",
-        "SQLite",
-        "Groq API",
-        "Llama 3.1",
-        "aiohttp",
-        "mcstatus"
-      ],
       achievements: [
         "Implemented Minecraft voice session tracking with playtime logging and leaderboards",
         "Built an AI assistant with long-term user memory and private DM support using Groq-hosted Llama 3.1",
@@ -55,17 +45,6 @@ const Projects = () => {
       duration: "2024",
       description:
         "Designed a schema-driven backend framework that generates production-ready FastAPI applications from YAML definitions. The system auto-generates database models, CRUD APIs, validation layers, and migrations, eliminating repetitive backend setup while preserving extensibility.",
-      technologies: [
-        "Python",
-        "FastAPI",
-        "SQLAlchemy",
-        "PostgreSQL",
-        "Alembic",
-        "Docker",
-        "JWT",
-        "Celery",
-        "Redis"
-      ],
       achievements: [
         "Designed a YAML-based schema system to define models, fields, and relationships declaratively",
         "Built a code generator that produces SQLAlchemy models, CRUD routers, and Pydantic schemas",
@@ -83,7 +62,6 @@ const Projects = () => {
       title: "SKARK Banking System",
       description:
         "A web-based chat-driven banking system with a Python Flask backend integrated with MySQL for secure data management. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript, while I focused on backend logic, database integration, and API endpoints.",
-      technologies: ["Python", "Flask", "MySQL", "REST API"],
       link: "#",
       github: "#",
       image: "/project4.jpg",
@@ -131,7 +109,7 @@ const Projects = () => {
                       href={(project.github && project.github !== '#') ? project.github : '#'}
                       target={(project.github && project.github !== '#') ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 ${
+                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 flex items-center justify-center ${
                         (!project.github || project.github === '#') ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                       whileHover={(project.github && project.github !== '#') ? { scale: 1.1 } : {}}
@@ -143,7 +121,7 @@ const Projects = () => {
                       href={(project.link && project.link !== '#') ? project.link : '#'}
                       target={(project.link && project.link !== '#') ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 ${
+                      className={`p-1.5 rounded-full glass-effect hover:bg-white/10 transition-all duration-300 flex items-center justify-center ${
                         (!project.link || project.link === '#') ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                       whileHover={(project.link && project.link !== '#') ? { scale: 1.1 } : {}}
@@ -155,22 +133,6 @@ const Projects = () => {
                 </div>
                 
                 <p className="text-xs text-gray-300 mb-3 leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-1 text-xs rounded-full glass-effect border border-white/10"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 text-xs rounded-full glass-effect border border-white/10">
-                      +{project.technologies.length - 3} more
-                    </span>
-                  )}
-                </div>
 
                 <motion.a
                   href={(project.link && project.link !== '#') ? project.link : (project.github && project.github !== '#') ? project.github : '#'}
