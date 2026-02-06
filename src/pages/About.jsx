@@ -37,9 +37,9 @@ const About = () => {
         </ScrollReveal>
         
         {/* Mobile Avatar */}
-        <ScrollReveal className="lg:hidden w-full h-[420px] mx-auto rounded-lg shadow-2xl overflow-hidden mb-8">
+        <ScrollReveal className="lg:hidden w-full mx-auto rounded-lg shadow-2xl overflow-hidden mb-8">
           <img 
-            className="w-full h-full object-cover rounded-lg shadow-2xl"
+            className="w-full h-auto rounded-lg shadow-2xl"
             src="/avatar.PNG"
             alt="Sarabdeep Singh Bilkhu"
           />
@@ -49,37 +49,48 @@ const About = () => {
         <div className="lg:mr-[580px]">
           <div className="max-w-full">
             <ScrollReveal>
-              <p className="text-justify mb-5 leading-relaxed">
-              I'm Sarabdeep Singh Bilkhu — a passionate developer and creative problem solver who loves 
-              turning ideas into reality through code. With a strong foundation in modern web technologies, 
-              I specialize in building applications that not only work flawlessly but also provide exceptional 
-              user experiences.
+              <p className="text-justify mb-8 leading-relaxed text-lg font-medium text-gray-200">
+                I'm Sarabdeep Singh Bilkhu, a software developer focused on practical solutions and solid user experiences.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <p className="text-justify mb-5 leading-relaxed">
-              My journey in tech started with curiosity and has evolved into a deep passion for creating 
-              meaningful digital solutions. I believe in writing clean, maintainable, and scalable code, 
-              and I'm constantly exploring ways to make software more efficient and impactful. 
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-justify mb-5 leading-relaxed">
-              Over time, I've worked on a variety of personal and collaborative projects — from building 
-              responsive web interfaces and automation tools to developing privacy-focused applications 
-              and data-driven platforms.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <p className="text-justify mb-5 leading-relaxed">
-              When I'm not coding, you'll find me experimenting with new frameworks, contributing to open-source 
-              projects, or mentoring junior developers. I love sharing knowledge with the community through 
-              workshops, blogs, and code reviews. I'm always on the lookout for exciting challenges, and 
-              opportunities to build software that makes a difference.
 
+            <div className="flex flex-col gap-6">
+              <ScrollReveal delay={0.1}>
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
+                  <div>
+                    <h4 className="font-bold text-lg text-white">Developer</h4>
+                    <p className="text-gray-400">Building functional applications that solve real problems.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
 
-              </p>
-            </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
+                  <div>
+                    <h4 className="font-bold text-lg text-white">Tech Stack</h4>
+                    <p className="text-gray-400">Working with modern web technologies to create responsive, usable interfaces.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.3}>
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
+                  <div>
+                    <h4 className="font-bold text-lg text-white">Code Approach</h4>
+                    <p className="text-gray-400">Prioritizing clarity, reliability, and performance.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
+                  <div>
+                    <h4 className="font-bold text-lg text-white">Community & Mentorship</h4>
+                    <p className="text-gray-400">Contributing to open source and supporting new developers.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
         
