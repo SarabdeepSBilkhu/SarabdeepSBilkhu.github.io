@@ -5,10 +5,10 @@ import ScrollReveal from "../components/ScrollReveal";
 
 const About = () => {
   const interests = [
-    { icon: FiCode, title: "Open Source", description: "Contributing to meaningful projects" },
-    { icon: FiHeart, title: "User Experience", description: "Creating intuitive interfaces" },
-    { icon: FiTarget, title: "Problem Solving", description: "Finding elegant solutions" },
-    { icon: FiAward, title: "Continuous Learning", description: "Staying updated with tech trends" }
+    { icon: FiCode, title: "Open Source", description: "Contributing to projects that improve real tools and systems." },
+    { icon: FiHeart, title: "User Experience", description: "Designing clear, functional interfaces." },
+    { icon: FiTarget, title: "Problem Solving", description: "Turning complex challenges into practical solutions." },
+    { icon: FiAward, title: "Continuous Learning", description: "Adapting to new technologies and improving skills." }
   ];
 
 
@@ -50,7 +50,8 @@ const About = () => {
           <div className="max-w-full">
             <ScrollReveal>
               <p className="text-justify mb-8 leading-relaxed text-lg font-medium text-gray-200">
-                I'm Sarabdeep Singh Bilkhu, a software developer focused on practical solutions and solid user experiences.
+                I am Sarabdeep Singh Bilkhu, a software developer focused on practical engineering 
+                and effective user experiences.
               </p>
             </ScrollReveal>
 
@@ -58,8 +59,8 @@ const About = () => {
               <ScrollReveal delay={0.1}>
                 <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
                   <div>
-                    <h4 className="font-bold text-lg text-white">Developer</h4>
-                    <p className="text-gray-400">Building functional applications that solve real problems.</p>
+                    <h4 className="font-bold text-lg text-white">Full-Stack Development</h4>
+                    <p className="text-gray-400">Design and build full-stack applications.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -67,8 +68,8 @@ const About = () => {
               <ScrollReveal delay={0.2}>
                 <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
                   <div>
-                    <h4 className="font-bold text-lg text-white">Tech Stack</h4>
-                    <p className="text-gray-400">Working with modern web technologies to create responsive, usable interfaces.</p>
+                    <h4 className="font-bold text-lg text-white">Backend Engineering</h4>
+                    <p className="text-gray-400">Develop APIs, databases, and backend systems.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -76,8 +77,8 @@ const About = () => {
               <ScrollReveal delay={0.3}>
                 <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
                   <div>
-                    <h4 className="font-bold text-lg text-white">Code Approach</h4>
-                    <p className="text-gray-400">Prioritizing clarity, reliability, and performance.</p>
+                    <h4 className="font-bold text-lg text-white">Frontend Implementation</h4>
+                    <p className="text-gray-400">Create responsive user interfaces.</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -85,8 +86,8 @@ const About = () => {
               <ScrollReveal delay={0.4}>
                 <div className="flex items-start gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
                   <div>
-                    <h4 className="font-bold text-lg text-white">Community & Mentorship</h4>
-                    <p className="text-gray-400">Contributing to open source and supporting new developers.</p>
+                    <h4 className="font-bold text-lg text-white">Code Quality</h4>
+                    <p className="text-gray-400">Write maintainable, performance-focused code.</p>
                   </div>
                 </div>
               </ScrollReveal>

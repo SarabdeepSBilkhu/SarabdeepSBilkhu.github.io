@@ -55,7 +55,7 @@ const Hero = () => {
         } else {
           setSubmitStatus("error");
         }
-      } catch (error) {
+      } catch {
         setSubmitStatus("error");
       }
       setIsSubmitting(false);
@@ -96,15 +96,13 @@ const Hero = () => {
               className="lg:text-5xl sm:text-4xl text-2xl 
               font-extrabold mb-5 text-white"
             >
-              Crafting Digital Experiences
+              Building Practical Software
             </h1>
 
             <p className="lg:max-w-[500px] text-gray-300 leading-relaxed">
-                A passionate developer focused on crafting meaningful digital solutions, I blend creativity with 
-                technical expertise to build applications that are both functional and user-centric. From intuitive 
-                interfaces to scalable backend systems, I strive to create products that not only work seamlessly 
-                but also provide real value to their users. My approach is rooted in clean, efficient code and 
-                thoughtful design that prioritizes both performance and usability.
+                I develop functional, reliable applications. My work covers frontend interfaces, 
+                backend systems, and software architecture. I focus on structured code, performance, 
+                and usability to create maintainable solutions that solve real problems.
             </p>
           </ScrollReveal>
 
@@ -255,7 +253,8 @@ const Hero = () => {
           className="lg:text-3xl md:text-2xl text-lg
           font-extrabold mb-12 tracking-wider text-center text-white"
         >
-          "Clean code. Clear visuals. Useful insights."
+          &quot;Clean code. Clear visuals. Useful insights.&quot;
+
         </motion.h1>
       </ScrollReveal>
     </main>

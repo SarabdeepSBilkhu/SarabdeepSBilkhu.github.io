@@ -8,32 +8,18 @@ const Projects = () => {
     {
       title: "AlgoTrace - Advanced Algorithm Visualizer",
       description:
-        "A next-generation algorithm visualizer featuring a 'Time-Travel' debugging engine to record, replay, and scrub through algorithm execution steps. Includes multi-structure visualization for arrays and graphs, plus an integrated Monaco code editor.",
+        "An algorithm visualization platform with a time-travel debugging engine for step-by-step execution replay. Supports array and graph visualization with an integrated code editor.",
       link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
       github: "https://github.com/SarabdeepSBilkhu/algotrace",
       image: "/project1.jpg",
       featured: true,
-      achievements: [
-        "Implemented deterministic 'Time-Travel' debugging to step forward/backward through algorithms",
-        "Built a custom Proxy-based JS execution engine to capture comparisons and swaps",
-        "Integrated Monaco Editor for in-browser code writing and execution",
-        "Designed a modern 'Dark Glass' aesthetic with smooth Framer Motion animations"
-      ]
     },
     {
       title: "SMPHorizon Discord Bot",
       company: "Personal / Community Project",
       duration: "2024",
       description:
-        "Built a full-featured Discord bot for the SMPHorizon Minecraft community, handling voice-based play sessions, AI-powered chat, persistent user memory, XP tracking, moderation, and live Aternos server status. Designed as a single integrated system with long-running reliability and persistent storage.",
-      achievements: [
-        "Implemented Minecraft voice session tracking with playtime logging and leaderboards",
-        "Built an AI assistant with long-term user memory and private DM support using Groq-hosted Llama 3.1",
-        "Designed an XP and leveling system backed by persistent SQLite storage",
-        "Integrated live Aternos server status monitoring via mcstatus",
-        "Developed automated moderation features including banned-word filtering and warning system",
-        "Deployed and maintained the bot on Railway with environment-based configuration"
-      ],
+        "A production-grade Discord bot managing voice sessions, AI chat, user data, XP tracking, moderation, and live server status. Built for long-term reliability with persistent storage.",
       link: "#",
       github: "https://github.com/SarabdeepSBilkhu/SMPHorizon_Bot",
       image: "/project2.jpg",
@@ -44,15 +30,7 @@ const Projects = () => {
       company: "Open Source Project",
       duration: "2024",
       description:
-        "Designed a schema-driven backend framework that generates production-ready FastAPI applications from YAML definitions. The system auto-generates database models, CRUD APIs, validation layers, and migrations, eliminating repetitive backend setup while preserving extensibility.",
-      achievements: [
-        "Designed a YAML-based schema system to define models, fields, and relationships declaratively",
-        "Built a code generator that produces SQLAlchemy models, CRUD routers, and Pydantic schemas",
-        "Implemented JWT-based authentication with secure password hashing",
-        "Integrated Alembic migrations for automated schema evolution",
-        "Containerized the entire stack with Docker and Docker Compose for one-command startup",
-        "Created an extension and hook system for injecting custom business logic without modifying core code"
-      ],
+        "A schema-driven framework that generates FastAPI backends from YAML definitions. Automatically creates database models, APIs, validation layers, and migrations.",
       link: "#",
       github: "https://github.com/SarabdeepSBilkhu/Backend-in-a-Box",
       image: "/project3.jpg",
@@ -61,15 +39,13 @@ const Projects = () => {
     {
       title: "SKARK Banking System",
       description:
-        "A web-based chat-driven banking system with a Python Flask backend integrated with MySQL for secure data management. The frontend was developed by Ranbir Khurana (DevRanbir) using HTML, CSS, and JavaScript, while I focused on backend logic, database integration, and API endpoints.",
+        "A web-based banking platform using Flask and MySQL. Responsible for backend logic, database integration, and API development.",
       link: "#",
       github: "#",
       image: "/project4.jpg",
       featured: false
     }
   ];
-
-
 
   return (
     <section className="py-8 md:py-16 px-4 md:px-6 relative min-h-screen">
