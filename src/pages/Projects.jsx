@@ -41,7 +41,7 @@ const Projects = () => {
       description:
         "A web-based banking platform using Flask and MySQL. Responsible for backend logic, database integration, and API development.",
       link: "#",
-      github: "#",
+      github: "https://github.com/SarabdeepSBilkhu/ChatCash",
       image: "/project4.jpg",
       featured: false
     }
