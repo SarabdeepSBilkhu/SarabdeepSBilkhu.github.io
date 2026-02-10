@@ -6,7 +6,7 @@ import ScrollReveal from "../components/ScrollReveal";
 const Projects = () => {
   const projectList = [
     {
-      title: "AlgoTrace - Advanced Algorithm Visualizer",
+      title: "AlgoTrace",
       description:
         "An algorithm visualization platform with a time-travel debugging engine for step-by-step execution replay. Supports array and graph visualization with an integrated code editor.",
       link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
