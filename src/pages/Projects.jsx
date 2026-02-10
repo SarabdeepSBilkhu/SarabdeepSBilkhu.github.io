@@ -37,7 +37,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "SKARK Banking System",
+      title: "ChatCash",
       description:
         "A web-based banking platform using Flask and MySQL. Responsible for backend logic, database integration, and API development.",
       link: "#",
