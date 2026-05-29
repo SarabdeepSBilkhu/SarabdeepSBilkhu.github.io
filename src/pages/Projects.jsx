@@ -5,47 +5,65 @@ import ScrollReveal from "../components/ScrollReveal";
 
 const Projects = () => {
   const projectList = [
-    {
-      title: "AlgoTrace",
-      description:
-        "An algorithm visualization platform with a time-travel debugging engine for step-by-step execution replay. Supports array and graph visualization with an integrated code editor.",
-      link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
-      github: "https://github.com/SarabdeepSBilkhu/algotrace",
-      image: "/project1.jpg",
-      featured: true,
-    },
-    {
-      title: "SMPHorizon Discord Bot",
-      company: "Personal / Community Project",
-      duration: "2024",
-      description:
-        "A production-grade Discord bot managing voice sessions, AI chat, user data, XP tracking, moderation, and live server status. Built for long-term reliability with persistent storage.",
-      link: "#",
-      github: "https://github.com/SarabdeepSBilkhu/SMPHorizon_Bot",
-      image: "/project2.jpg",
-      featured: true
-    },
-    {
-      title: "Backend-in-a-Box",
-      company: "Open Source Project",
-      duration: "2024",
-      description:
-        "A schema-driven framework that generates FastAPI backends from YAML definitions. Automatically creates database models, APIs, validation layers, and migrations.",
-      link: "#",
-      github: "https://github.com/SarabdeepSBilkhu/Backend-in-a-Box",
-      image: "/project3.jpg",
-      featured: true
-    },
-    {
-      title: "ChatCash",
-      description:
-        "A web-based banking platform using Flask and MySQL. Responsible for backend logic, database integration, and API development.",
-      link: "#",
-      github: "https://github.com/SarabdeepSBilkhu/ChatCash",
-      image: "/project4.jpg",
-      featured: false
-    }
-  ];
+  {
+    title: "AlgoTrace",
+    description:
+      "An algorithm visualization platform with a time-travel debugging engine for step-by-step execution replay. Supports array and graph visualization with an integrated code editor.",
+    link: "https://SarabdeepSBilkhu.github.io/AlgoTrace",
+    github: "https://github.com/SarabdeepSBilkhu/algotrace",
+  },
+  {
+    title: "Backend-in-a-Box",
+    company: "Open Source Project",
+    duration: "2024",
+    description:
+      "A schema-driven framework that generates FastAPI backends from YAML definitions. Automatically creates database models, APIs, validation layers, and migrations.",
+    link: "#",
+    github: "https://github.com/SarabdeepSBilkhu/Backend-in-a-Box",
+  },
+  {
+    title: "ChatCash",
+    description:
+      "A web-based banking platform using Flask and MySQL. Responsible for backend logic, database integration, and API development.",
+    link: "#",
+    github: "https://github.com/SarabdeepSBilkhu/ChatCash",
+  },
+  {
+    title: "HemaSense",
+    description:
+      "A deterministic clinical reasoning system for blood-test interpretation. Processes raw laboratory values through rule-based pattern recognition, severity grading, confidence scoring, contradiction detection, and evidence-anchored diagnostic explanations.",
+    link: "#",
+    github: "https://github.com/SarabdeepSBilkhu/HemaSense",
+  },
+  {
+    title: "IntelliKernel",
+    description:
+      "A cross-platform AI-assisted system optimizer daemon that monitors CPU, memory, disk I/O, network, and thermals, then dynamically tunes OS and kernel parameters using rule-based and ML-driven policies.",
+    link: "#",
+    github: "https://github.com/SarabdeepSBilkhu/IntelliKernel",
+  },
+  {
+    title: "Paranormix",
+    description:
+      "A hybrid explainable AI forensic analysis platform for paranormal narratives. Combines NLP signal extraction, machine learning classification, deterministic rule resolution, and evidence-grounded LLM explanations.",
+    link: "https://paranormix-production.up.railway.app",
+    github: "https://github.com/SarabdeepSBilkhu/Paranormix",
+  },
+  {
+    title: "SMPHorizon Discord Bot",
+    description:
+      "A production-grade Discord bot managing voice sessions, AI chat, user data, XP tracking, moderation, and live server status. Built for long-term reliability with persistent storage.",
+    link: "#",
+    github: "https://github.com/SarabdeepSBilkhu/SMPHorizon_Bot",
+  },
+  {
+    title: "TrackPoint",
+    description:
+      "A real-time vehicle tracking system built with Node.js, Socket.IO, PostgreSQL, and Leaflet.js. Provides live GPS tracking, route history visualization, JWT authentication, and multi-client map synchronization.",
+    link: "https://trackpoint-production.up.railway.app/",
+    github: "https://github.com/SarabdeepSBilkhu/TrackPoint",
+  },
+];
 
   return (
     <section className="py-8 md:py-16 px-4 md:px-6 relative min-h-screen">
