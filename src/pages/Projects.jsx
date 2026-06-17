@@ -63,6 +63,13 @@ const Projects = () => {
     link: "https://trackpoint-production.up.railway.app/",
     github: "https://github.com/SarabdeepSBilkhu/TrackPoint",
   },
+  {
+    title: "VitalDiary",
+    description:
+        "A full-stack personal health tracking platform for securely recording, monitoring, and analyzing health metrics. Includes health logging, analytics dashboards, reporting, and long-term medical record management.",
+    link: "https://vitaldiary-production.up.railway.app",
+    github: "https://github.com/SarabdeepSBilkhu/VitalDiary",
+  },
 ];
 
   return (
