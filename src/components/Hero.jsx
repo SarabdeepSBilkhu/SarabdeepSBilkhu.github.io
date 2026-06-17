@@ -251,7 +251,7 @@ const Hero = () => {
       >
         <motion.h1 
           className="lg:text-3xl md:text-2xl text-lg
-          font-extrabold mb-12 tracking-wider text-center text-white"
+          font-extrabold mb-20 tracking-wider text-center text-white"
         >
           &quot;Clean code. Clear visuals. Useful insights.&quot;
 
